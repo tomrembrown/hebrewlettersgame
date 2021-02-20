@@ -1,0 +1,13 @@
+{
+  "name": "hebrewlettersgame",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/tomrembrown/hebrewlettersgame.git",
+  "author": "Tom Brown <tombrown654321@protonmail.com>",
+  "license": "MIT",
+  "description": "This is a game to test how well you know the letters of the Hebrew alphabet.",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
