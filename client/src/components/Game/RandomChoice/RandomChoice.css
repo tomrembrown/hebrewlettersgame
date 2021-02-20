@@ -1,0 +1,21 @@
+#random-choice {
+  margin: 20px auto 0 auto;
+  padding: 5px;
+  text-align: center;
+  direction: rtl;
+  font-size: 55px;
+  border: 1px solid #3d3331;
+  border-radius: 6px;
+  width: 80px;
+  height: 80px;
+  color: maroon;
+  position: relative;
+}
+
+.charactername {
+  font-size: 11pt;
+  font-style: italic;
+  color: #444;
+  text-align: center;
+  padding: 0px 0px 6px 0px;
+}

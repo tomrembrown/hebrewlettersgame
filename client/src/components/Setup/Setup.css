@@ -1,0 +1,30 @@
+.groupboxes {
+  margin: 0 auto;
+  width: 250px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
+}
+
+.groupboxes > div {
+  margin-bottom: 10px;
+  align-items: left;
+  text-align: left;
+}
+
+.groupboxes > h2 {
+  text-align: left;
+  margin-left: 8px;
+}
+
+.data {
+  grid-row: span 2;
+}
+
+#setup > h1,
+#setup > p {
+  text-align: center;
+}

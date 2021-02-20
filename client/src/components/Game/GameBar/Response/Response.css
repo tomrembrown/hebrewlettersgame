@@ -1,0 +1,14 @@
+#response {
+  font-family: 'Digital Font', monospace;
+  font-size: 52px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.correct {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}

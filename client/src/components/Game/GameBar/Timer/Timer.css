@@ -1,0 +1,15 @@
+#timer {
+  background-color: #272e38;
+  font-family: 'Digital Font', monospace;
+  font-size: 36px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #cacaca;
+  padding: 4px 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  transition: 0.25s;
+  border: 5px solid #5f3222;
+  border-radius: 8px;
+}

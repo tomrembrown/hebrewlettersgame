@@ -1,0 +1,101 @@
+[
+  {
+    "columnName": "paleoHebrew",
+    "className": "paleoHebrew",
+    "dataElement": "paleoHebrew",
+    "display": "Paleo-Hebrew",
+    "isHTML": false,
+    "isImg": false,
+    "columnType": "character"
+  },
+  {
+    "columnName": "aramaicBiblicalSerif",
+    "className": "aramaicBiblicalSerif",
+    "dataElement": "unicode",
+    "display": "Aramaic Biblical Serif",
+    "isHTML": true,
+    "isImg": false,
+    "columnType": "character"
+  },
+  {
+    "columnName": "aramaicBiblicalSansSerif",
+    "className": "aramaicBiblicalSansSerif",
+    "display": "Aramaic Biblical Sans-Serif",
+    "dataElement": "unicode",
+    "isHTML": true,
+    "isImg": false,
+    "columnType": "character"
+  },
+  {
+    "columnName": "modernCursive",
+    "className": "modernCursive",
+    "dataElement": "modernCursive",
+    "display": "Modern Cursive",
+    "isHTML": false,
+    "isImg": true,
+    "columnType": "character"
+  },
+  {
+    "columnName": "power",
+    "className": "",
+    "dataElement": "power",
+    "display": "Power",
+    "isHTML": false,
+    "isImg": false,
+    "columnType": "data"
+  },
+  {
+    "columnName": "position",
+    "className": "",
+    "dataElement": "position",
+    "display": "Position",
+    "isHTML": false,
+    "isImg": false,
+    "columnType": "data"
+  },
+  {
+    "columnName": "value",
+    "className": "",
+    "dataElement": "value",
+    "display": "Value",
+    "isHTML": false,
+    "isImg": false,
+    "columnType": "data"
+  },
+  {
+    "columnName": "name",
+    "className": "",
+    "dataElement": "name",
+    "display": "Name",
+    "isHTML": false,
+    "isImg": false,
+    "columnType": "data"
+  },
+  {
+    "columnName": "meaning",
+    "className": "",
+    "dataElement": "meaning",
+    "display": "Meaning",
+    "isHTML": false,
+    "isImg": false,
+    "columnType": "data"
+  },
+  {
+    "columnName": "transliteration",
+    "className": "transliteration",
+    "dataElement": "transliteration",
+    "display": "Transliteration",
+    "isHTML": false,
+    "isImg": false,
+    "columnType": "data"
+  },
+  {
+    "columnName": "pronunciation",
+    "className": "",
+    "dataElement": "pronunciation",
+    "display": "Pronunciation",
+    "isHTML": true,
+    "isImg": false,
+    "columnType": "data"
+  }
+]

@@ -1,0 +1,71 @@
+.aramaicBiblicalSerif {
+  text-align: center;
+  font-family: 'Tinos', serif;
+  direction: rtl;
+  font-size: 30px;
+  width: auto;
+  height: 40px;
+}
+
+@font-face {
+  font-family: 'Open Sans Hebrew';
+  src: url('./OpenSansHebrewFont/OpenSansHebrew-Regular.eot'); /* IE9 Compat Modes */
+  src: /*IE6-IE8 */ url('./OpenSansHebrewFont/OpenSansHebrew-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* Super Modern Browsers */
+      url('./OpenSansHebrewFont/OpenSansHebrew-Regular.woff2') format('woff2'),
+    /* Modern Browsers */
+      url('./OpenSansHebrewFont/OpenSansHebrew-Regular.woff') format('woff'),
+    /* Safari, Android, iOS */
+      url('./OpenSansHebrewFont/OpenSansHebrew-Regular.ttf') format('truetype'),
+    /* Legacy iOS */
+      url('./OpenSansHebrewFont/OpenSansHebrew-Regular.svg#OpenSansHebrew-Regular')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Digital Font';
+  src: url('./DigitalFont/DigitalFont.eot'); /* IE9 Compat Modes */
+  src: /*IE6-IE8 */ url('./DigitalFont/DigitalFont.eot?#iefix')
+      format('embedded-opentype'),
+    /* Super Modern Browsers */ url('./DigitalFont/DigitalFont.woff2')
+      format('woff2'),
+    /* Modern Browsers */ url('./DigitalFont/DigitalFont.woff') format('woff'),
+    /* Safari, Android, iOS */ url('./DigitalFont/DigitalFont.ttf')
+      format('truetype'),
+    /* Legacy iOS */ url('./DigitalFont/DigitalFont.svg#DigitalFont')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.aramaicBiblicalSansSerif {
+  text-align: center;
+  font-family: 'Open Sans Hebrew', sans-serif;
+  direction: rtl;
+  font-size: 30px;
+  width: auto;
+  height: 40px;
+}
+
+.paleoHebrew {
+  text-align: center;
+  font-family: Arial;
+  direction: rtl;
+  font-size: 30px;
+  width: auto;
+  height: 40px;
+}
+
+.modernCursive > img {
+  width: 20px;
+}
+
+.transliteration {
+  font-family: 'Tinos', serif;
+  font-size: 24px;
+}

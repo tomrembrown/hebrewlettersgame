@@ -1,0 +1,18 @@
+#question {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+button {
+  margin: 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f8dfdf;
+}
+
+#options {
+  text-align: center;
+}

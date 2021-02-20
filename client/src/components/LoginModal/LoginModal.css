@@ -1,0 +1,23 @@
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 2%;
+  z-index: 2000;
+  text-align: center;
+}
+
+.background-white {
+  background-color: white;
+}

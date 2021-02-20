@@ -1,0 +1,8 @@
+#game-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.element {
+  padding: 8px;
+}

@@ -1,0 +1,26 @@
+table.alphabetTable {
+  border-collapse: collapse;
+  border: 2px solid #333;
+}
+
+table.alphabetTable td,
+table.alphabetTable th {
+  border: 1px solid #777;
+  width: 80px;
+  padding: 2px 5px;
+}
+
+table.alphabetTable thead {
+  border: 2px solid #333;
+}
+
+table.alphabetTable th {
+  font-size: 18px;
+}
+
+.alphabetTable {
+  margin: 0 auto;
+}
+#hebrew-alphabet {
+  text-align: center;
+}

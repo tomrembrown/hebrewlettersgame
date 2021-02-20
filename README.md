@@ -102,7 +102,7 @@ These tests handle linting with jshint, link checking, and some cross-page and u
 - [Node.JS](https://nodejs.org/) - JavaScript runtime that allows server-side JavaScript
 - [Express](https://expressjs.com/) - Backend framework
 - [PostgreSQL](https://www.postgresql.org/) - Database
-- [React](https://reactjs.org/ - Frontend framework
+- [React](https://reactjs.org/) - Frontend framework
 
 ## Contributing
 
