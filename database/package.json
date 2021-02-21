@@ -1,0 +1,15 @@
+{
+  "name": "database",
+  "version": "0.0.1",
+  "description": "The database for the Hebrew letters game - just scripts to create database",
+  "main": "createDatabase.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "pg": "^8.5.1"
+  },
+  "scripts": {
+    "createTables": "node ./createTables.js"
+  }
+}

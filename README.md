@@ -35,7 +35,8 @@ cp .env_development .env
 Determine port postgres runs on
 
 ```
-sudo netstat -plunt |grep postgres
+linux:  sudo netstat -plunt |grep postgres
+or in psql terminal type \conninfo
 ```
 
 Build PostgreSQL initial database, create user, and give user permissions
@@ -47,6 +48,7 @@ CREATE DATABASE hebrew_game;
 CREATE ROLE hg_computer_access WITH ENCRYPTED PASSWORD (enter password here);
 GRANT ALL PRIVILEGES ON DATABASE hebrew_game TO hg_computer_access;
 ALTER ROLE "hg_computer_access" WITH LOGIN;
+CREATE EXTENSION IF NOT EXISTS citext;
 ```
 
 Adjust parameters in .env as necessary (such as postgres port and hg_computer_access password)
@@ -54,7 +56,7 @@ Adjust parameters in .env as necessary (such as postgres port and hg_computer_ac
 Create the database tables
 
 ```
-yarn run createDatabase
+yarn run createTables
 ```
 
 If using existing data, upload the latest data set

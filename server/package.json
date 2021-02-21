@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "A simple REST server for the Hebrew alphabet game. It just stores users login information and high scores.",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run prod",
+    "dev": "nodemon ./server.js",
+    "prod": "node ./server.js",
+    "server": "pm2 start ./server.js --name \"HebrewAlphabetGame\""
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "connect-history-api-fallback": "^1.6.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pm2": "^4.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
