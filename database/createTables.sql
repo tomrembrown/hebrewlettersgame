@@ -10,17 +10,21 @@ Script to create the Hebrew Letter Game database
 DROP TABLE IF EXISTS high_scores;
 DROP TABLE IF EXISTS login;
 
--- This is a standalone table - for quotations
 CREATE TABLE login(
   id SERIAL PRIMARY KEY,
-  email CITEXT NOT NULL,
-  password_encrypted TEXT NOT NULL,
+  email CITEXT NOT NULL UNIQUE,
+  password_hash TEXT NOT NULL,
   signup_date TIMESTAMP NOT NULL
 );
 
+-- This table has same primary key as previous table - so 1 to 1 relation
+-- You could put all of the information in high_scores into login
+-- I made a choice to separate them - since high_scores has no 'confidential'
+-- information, whereas login does, such as the email and the hashed password
 CREATE TABLE high_scores(
-  id INTEGER REFERENCES login(id) NOT NULL,
-  user_handle TEXT NOT NULL UNIQUE,
-  high_score NUMERIC(7,1) DEFAULT NULL
+  id INTEGER REFERENCES login(id) PRIMARY KEY,
+  user_handle CITEXT NOT NULL UNIQUE,
+  high_score NUMERIC(7,1) DEFAULT NULL,
+  score_rank SMALLINT DEFAULT NULL
 );
 
