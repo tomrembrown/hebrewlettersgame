@@ -12,9 +12,15 @@ const asyncMiddleware = require('../utils/asyncMiddleware')
 const getSigninData = require('../model/getSigninData')
 const getProfile = require('../model/getProfile')
 const { Client } = require('pg')
+const { validateEmail, validatePassword } = require('../../common/validation')
 
 const signinController = asyncMiddleware(async (req, res) => {
   const { email, password } = req.body
+
+  if (!validatePassword(password) || !validateEmail(email))
+    return res
+      .status(400)
+      .json('post signin requires valid email and valid password in body')
 
   const client = new Client()
   await client.connect()

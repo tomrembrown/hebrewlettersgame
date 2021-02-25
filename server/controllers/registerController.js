@@ -12,9 +12,26 @@ const saltRounds = 10
 const asyncMiddleware = require('../utils/asyncMiddleware')
 const register = require('../model/register')
 const { Client } = require('pg')
+const {
+  validateUserHandle,
+  validateEmail,
+  validatePassword,
+} = require('../../common/validation')
 
 const registerController = asyncMiddleware(async (req, res) => {
   const { user_handle, email, password } = req.body
+
+  if (
+    !validateUserHandle(user_handle) ||
+    !validateEmail(email) ||
+    !validatePassword(password)
+  )
+    return res
+      .status(400)
+      .json(
+        'post register requires valid user_handle, email, and password in body'
+      )
+
   const signup_date = new Date()
   const password_hash = await bcrypt.hash(password, saltRounds)
   const client = new Client()

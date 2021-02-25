@@ -9,9 +9,16 @@
 const asyncMiddleware = require('../utils/asyncMiddleware')
 const deleteProfile = require('../model/deleteProfile')
 const { Client } = require('pg')
+const { validateId } = require('../../common/validation')
 
 const deleteProfileController = asyncMiddleware(async (req, res) => {
   const { id } = req.params
+
+  if (!validateId(id))
+    return res
+      .status(400)
+      .json('delete profile requires valid id in parameters')
+
   const client = new Client()
   await client.connect()
   await deleteProfile(client, id)
