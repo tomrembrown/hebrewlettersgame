@@ -28,7 +28,7 @@ const register = async function (
       id: id,
       user_handle: user_handle,
       high_score: null,
-      rank: null,
+      score_rank: null,
     }
     return data
   } catch (error) {

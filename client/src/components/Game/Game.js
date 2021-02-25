@@ -10,13 +10,14 @@ import gameData from '../../data/gamedata.json'
 import columnInfoArray from '../../data/columnInfo.json'
 import { shuffle } from '../../utils/arrayManipulation'
 import './Game.css'
+import { updateHighScore } from '../../api/api-client'
 
 class Game extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      totalGameTimeSeconds: 300,
-      timeLeft: 300,
+      totalGameTimeSeconds: 30,
+      timeLeft: 30,
       correctOrWrong: '',
       numCorrect: 0,
       numWrong: 0,
@@ -29,6 +30,7 @@ class Game extends Component {
       correctId: -1,
       isModalShown: false,
       modaltitle: 'Game Finished!',
+      newHighScore: false,
     }
   }
 
@@ -123,6 +125,15 @@ class Game extends Component {
   }
 
   gameFinished = () => {
+    if (this.props.isSignedIn) {
+      const high_score = this.props.user_high_score
+      if (high_score === null || this.state.gameScore > high_score) {
+        this.setState({ newHighScore: true })
+        updateHighScore(this.props.user_id, this.state.gameScore).then((user) =>
+          this.props.loadUser(user)
+        )
+      }
+    }
     this.showModal()
   }
 
@@ -140,6 +151,7 @@ class Game extends Component {
   }
 
   startGame = () => {
+    this.setState({ newHighScore: false })
     this.timerID = setInterval(() => this.tick(), 1000)
   }
 
@@ -209,9 +221,15 @@ class Game extends Component {
       randomDataColumn,
       dataSetChosen,
       gameDataUnique,
+      newHighScore,
     } = this.state
 
-    const { isSignedIn } = this.props
+    const {
+      isSignedIn,
+      user_score_rank,
+      user_handle,
+      user_high_score,
+    } = this.props
 
     return (
       <div id="game">
@@ -223,8 +241,17 @@ class Game extends Component {
         >
           <p>Game Finished!</p>
           <p>Your Score is {gameScore}</p>
+          {newHighScore ? <p>New personal all-time high score!</p> : ''}
         </Modal>
-        {isSignedIn ? <Rank /> : ''}
+        {isSignedIn ? (
+          <Rank
+            user_score_rank={user_score_rank}
+            user_handle={user_handle}
+            user_high_score={user_high_score}
+          />
+        ) : (
+          ''
+        )}
         <div id="game-board">
           <GameInfo
             numCorrect={numCorrect}

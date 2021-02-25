@@ -7,6 +7,7 @@ import HighScores from './components/HighScores/HighScores'
 import StartNewGame from './components/StartNewGame/StartNewGame'
 import LoginModal from './components/LoginModal/LoginModal'
 import columnInfoArray from './data/columnInfo.json'
+import { getScoreList } from './api/api-client'
 import './App.css'
 
 class App extends Component {
@@ -23,11 +24,21 @@ class App extends Component {
       randomTest: false,
       isErrorModaShown: false,
       setupErrorMessage: '',
+      user_id: null,
+      user_handle: null,
+      user_high_score: null,
+      user_score_rank: null,
+      highScores: [],
     }
   }
 
   onMainRouteChange = (mainRoute) => {
     this.setState({ mainRoute: mainRoute })
+    if (mainRoute === 'highscores') {
+      getScoreList().then((scoreList) => {
+        this.setState({ highScores: scoreList })
+      })
+    }
   }
 
   showSigninModal = () => {
@@ -40,21 +51,32 @@ class App extends Component {
     this.setState({ isLoginModalShown: true })
   }
 
-  signin = () => {
+  successfullySignedIn = () => {
     this.setState({ isSignedIn: true })
     this.setState({ isLoginModalShown: false })
     this.startGame()
   }
 
-  register = () => {
-    this.setState({ isSignedIn: true })
-    this.setState({ isLoginModalShown: false })
-    this.startGame()
+  loadUser = (user) => {
+    this.setState({ user_id: Number(user.id) })
+    this.setState({ user_handle: user.user_handle })
+    this.setState({
+      user_high_score:
+        user.high_score === null ? null : Number(user.high_score),
+    })
+    this.setState({
+      user_score_rank:
+        user.score_rank === null ? null : Number(user.score_rank),
+    })
   }
 
   signout = () => {
     this.setState({ isSignedIn: false })
     this.setState({ isLoginModalShown: false })
+    this.setState({ user_id: null })
+    this.setState({ user_handle: null })
+    this.setState({ user_high_score: null })
+    this.setState({ user_score_rank: null })
   }
 
   stopGame = () => {
@@ -148,6 +170,11 @@ class App extends Component {
       randomTest,
       isErrorModalShown,
       setupErrorMessage,
+      user_id,
+      user_handle,
+      user_score_rank,
+      user_high_score,
+      highScores,
     } = this.state
     let mainSection = <div>{'Loading...'}</div>
     switch (mainRoute) {
@@ -157,11 +184,16 @@ class App extends Component {
             onMainRouteChange={this.onMainRouteChange}
             baseScoreUnit={this.getBaseScoreUnit()}
             signout={this.signout}
+            loadUser={this.loadUser}
             gameInProgress={gameInProgress}
             isSignedIn={isSignedIn}
             characterColumnsInTest={characterColumnsInTest}
             dataColumnsInTest={dataColumnsInTest}
             randomTest={randomTest}
+            user_id={user_id}
+            user_handle={user_handle}
+            user_score_rank={user_score_rank}
+            user_high_score={user_high_score}
           />
         )
         break
@@ -183,7 +215,7 @@ class App extends Component {
         mainSection = <HebrewAlphabetTable />
         break
       case 'highscores':
-        mainSection = <HighScores />
+        mainSection = <HighScores highScores={highScores} />
         break
       case 'startnewgame':
         mainSection = (
@@ -198,9 +230,9 @@ class App extends Component {
         <LoginModal
           isLoginModalShown={isLoginModalShown}
           signinOrRegister={signinOrRegister}
-          signin={this.signin}
-          register={this.register}
           showRegisterModal={this.showRegisterModal}
+          loadUser={this.loadUser}
+          successfullySignedIn={this.successfullySignedIn}
         />
         <NavigationBar
           onMainRouteChange={this.onMainRouteChange}

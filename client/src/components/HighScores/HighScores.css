@@ -1,3 +1,57 @@
 #high-scores > h1 {
   text-align: center;
 }
+
+#high-scores {
+  margin: 40px auto 0 auto;
+}
+
+#high-scores-table > table {
+  border: 5px solid darkcyan;
+  border-radius: 30px;
+  width: 400px;
+}
+
+.top-row {
+  font-size: 25px;
+  text-align: center;
+  background-color: darkgray;
+}
+
+#high-scores-table > table {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
+#high-scores-table td,
+#high-scores-table th {
+  vertical-align: top;
+}
+
+#high-scores-table th {
+  padding-bottom: 10px;
+}
+
+.rank-col {
+  width: 10px;
+  padding: 2px 5px;
+}
+
+.trophy-col {
+  width: 10px;
+  padding: 2px 5px;
+}
+
+.score-col {
+  width: 100px;
+  padding: 2px 5px;
+}
+
+.name-col {
+  width: 100px;
+  padding: 2px 5px;
+}

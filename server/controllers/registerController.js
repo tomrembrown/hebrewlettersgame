@@ -44,7 +44,7 @@ const registerController = asyncMiddleware(async (req, res) => {
     user_handle
   )
   await client.end()
-  res.json({ data })
+  res.json(data)
 })
 
 module.exports = registerController

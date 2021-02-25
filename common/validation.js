@@ -11,7 +11,7 @@ const validateEmail = (email) => {
 }
 
 const validatePassword = (password) => {
-  return /^[^\s].{8,20}$/.test(password)
+  return /^[^\s]{8,20}$/.test(password)
 }
 
 const validateHighScore = (high_score) => {

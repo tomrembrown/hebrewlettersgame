@@ -1,10 +1,15 @@
 import React from 'react'
 import './HighScores.css'
+import HighScoresTables from './HighScoresTable'
 
-const HighScores = () => {
+const HighScores = ({ highScores }) => {
   return (
     <div id="high-scores">
-      <h1>High Scores</h1>
+      {highScores.length === 0 ? (
+        <h1>No High Scores Yet</h1>
+      ) : (
+        <HighScoresTables highScores={highScores} />
+      )}
     </div>
   )
 }
