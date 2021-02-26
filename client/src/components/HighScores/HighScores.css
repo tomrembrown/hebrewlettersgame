@@ -9,13 +9,23 @@
 #high-scores-table > table {
   border: 5px solid darkcyan;
   border-radius: 30px;
-  width: 400px;
+  width: 500px;
 }
 
-.top-row {
+.top-row > th {
+  padding-top: 10px;
+}
+
+.second-row > th {
+  padding-top: 15px;
+}
+
+#high-scores-table tr.top-row {
   font-size: 25px;
   text-align: center;
-  background-color: darkgray;
+  background-color: #777;
+  color: white;
+  letter-spacing: 2px;
 }
 
 #high-scores-table > table {
@@ -38,20 +48,65 @@
 
 .rank-col {
   width: 10px;
-  padding: 2px 5px;
+  padding: 0px 2px;
+  text-align: left;
 }
 
-.trophy-col {
+.trophycol {
   width: 10px;
-  padding: 2px 5px;
+  padding: 0px 5px;
 }
 
 .score-col {
   width: 100px;
-  padding: 2px 5px;
+  padding: 0px 50px 0px 5px;
+  text-align: right;
 }
 
 .name-col {
-  width: 100px;
-  padding: 2px 5px;
+  width: 150px;
+  padding: 0px 5px;
+  text-align: left;
+}
+
+.second-row {
+  background-color: #555;
+  color: #ccc;
+}
+
+#high-scores-table tr.datarow > td {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#high-scores-table tr.datarow:nth-child(even) {
+  background-color: #555;
+}
+
+#high-scores-table tr.datarow:last-child > td {
+  padding-bottom: 15px;
+}
+
+#high-scores-table tr.datarow:nth-child(odd) {
+  background-color: #333;
+}
+
+#high-scores-table tr.first {
+  color: limegreen;
+}
+
+#high-scores-table tr.other {
+  color: white;
+}
+
+.goldtrophy {
+  color: #ffd700;
+}
+
+.silvertrophy {
+  color: #c0c0c0;
+}
+
+.bronzetrophy {
+  color: #cd7f32;
 }

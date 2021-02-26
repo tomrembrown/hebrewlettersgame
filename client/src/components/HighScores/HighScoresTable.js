@@ -11,10 +11,10 @@ const HighScoresTable = ({ highScores }) => {
           <tr className="top-row">
             <th colSpan={4}>HIGHSCORES</th>
           </tr>
-          <tr>
+          <tr className="second-row">
             <th colSpan={2}>RANK</th>
             <th>SCORE</th>
-            <th>PLAYER</th>
+            <th className="name-col">PLAYER</th>
           </tr>
         </thead>
         <tbody>
@@ -27,12 +27,16 @@ const HighScoresTable = ({ highScores }) => {
             else afterNumber = 'TH'
             const displayTrophy =
               score_rank === 1 || score_rank === 2 || score_rank === 3
+            let trophycolor = ''
+            if (score_rank === 1) trophycolor = ' goldtrophy'
+            else if (score_rank === 2) trophycolor = ' silvertrophy'
+            else if (score_rank === 3) trophycolor = ' bronzetrophy'
             return (
               <tr
-                className={score_rank === 1 ? 'first' : 'other'}
+                className={'datarow ' + (score_rank === 1 ? 'first' : 'other')}
                 key={user_handle}
               >
-                <td className="trophy-col">
+                <td className={'trophycol' + trophycolor}>
                   {displayTrophy ? <FontAwesomeIcon icon={faTrophy} /> : ''}
                 </td>
                 <td className="rank-col">

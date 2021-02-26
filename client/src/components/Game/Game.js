@@ -16,8 +16,8 @@ class Game extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      totalGameTimeSeconds: 30,
-      timeLeft: 30,
+      totalGameTimeSeconds: 300,
+      timeLeft: 300,
       correctOrWrong: '',
       numCorrect: 0,
       numWrong: 0,
