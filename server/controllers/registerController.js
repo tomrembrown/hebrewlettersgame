@@ -16,26 +16,48 @@ const {
   validateUserHandle,
   validateEmail,
   validatePassword,
-} = require('../../common/validation')
+} = require('../common/validation')
+const checkEmailTaken = require('../model/checkEmailTaken')
+const checkHandleTaken = require('../model/checkHandleTaken')
 
 const registerController = asyncMiddleware(async (req, res) => {
   const { user_handle, email, password } = req.body
 
-  if (
-    !validateUserHandle(user_handle) ||
-    !validateEmail(email) ||
-    !validatePassword(password)
-  )
-    return res
-      .status(400)
-      .json(
-        'post register requires valid user_handle, email, and password in body'
-      )
+  let errorArray = []
+  if (!validateUserHandle(user_handle)) errorArray.push('invalid user_handle')
+  if (!validateEmail(email)) errorArray.push('invalid email')
+  if (!validatePassword(password)) errorArray.push('invalid password')
+
+  if (errorArray.length > 0) {
+    const errorString = errorArray.join()
+    return res.json(errorString)
+  }
+
+  const client = new Client()
+  await client.connect()
+
+  const [emailTaken, handleTaken] = await Promise.all([
+    checkEmailTaken(client, email),
+    checkHandleTaken(client, user_handle),
+  ])
+
+  if (emailTaken) errorArray.push('email taken')
+  if (handleTaken) errorArray.push('user_handle taken')
+
+  if (errorArray.length > 0) {
+    const errorString = errorArray.join()
+    client.end()
+    return res.json(errorString)
+  }
+
+  if (errorArray.length > 0) {
+    const errorString = errorArray.join()
+    return res.json(errorString)
+  }
 
   const signup_date = new Date()
   const password_hash = await bcrypt.hash(password, saltRounds)
-  const client = new Client()
-  await client.connect()
+
   const data = await register(
     client,
     email,
@@ -43,8 +65,8 @@ const registerController = asyncMiddleware(async (req, res) => {
     signup_date,
     user_handle
   )
-  await client.end()
-  res.json(data)
+  client.end()
+  return res.json(data)
 })
 
 module.exports = registerController

@@ -79,6 +79,11 @@ class App extends Component {
     this.setState({ user_score_rank: null })
   }
 
+  closeLoginModal = () => {
+    this.setState({ isLoginModalShown: false })
+    this.startGame()
+  }
+
   stopGame = () => {
     this.setState({ gameInProgress: false })
   }
@@ -231,8 +236,10 @@ class App extends Component {
           isLoginModalShown={isLoginModalShown}
           signinOrRegister={signinOrRegister}
           showRegisterModal={this.showRegisterModal}
+          showSigninModal={this.showSigninModal}
           loadUser={this.loadUser}
           successfullySignedIn={this.successfullySignedIn}
+          closeLoginModal={this.closeLoginModal}
         />
         <NavigationBar
           onMainRouteChange={this.onMainRouteChange}

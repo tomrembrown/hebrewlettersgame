@@ -9,17 +9,19 @@ const asyncMiddleware = require('../utils/asyncMiddleware')
 const updateHighScore = require('../model/updateHighScore')
 const getProfile = require('../model/getProfile')
 const { Client } = require('pg')
-const { validateId, validateHighScore } = require('../../common/validation')
+const { validateId, validateHighScore } = require('../common/validation')
 
 const updateHighScoreController = asyncMiddleware(async (req, res) => {
   const { id, high_score } = req.body
 
-  if (!validateId(id) || !validateHighScore(high_score))
-    return res
-      .status(400)
-      .json(
-        'patch updateHighScore requires valid id and valid high_score in body'
-      )
+  let errorArray = []
+  if (!validateHighScore(high_score)) errorArray.push('invalid high_score')
+  if (!validateId(id)) errorArray.push('invalid id')
+
+  if (errorArray.length > 0) {
+    const errorString = errorArray.join()
+    return res.json(errorString)
+  }
 
   const client = new Client()
   await client.connect()

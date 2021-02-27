@@ -8,17 +8,19 @@
 const asyncMiddleware = require('../utils/asyncMiddleware')
 const updateHandle = require('../model/updateHandle')
 const { Client } = require('pg')
-const { validateId, validateUserHandle } = require('../../common/validation')
+const { validateId, validateUserHandle } = require('../common/validation')
 
 const updateHandleController = asyncMiddleware(async (req, res) => {
   const { id, user_handle } = req.body
 
-  if (!validateId(id) || !validateUserHandle(user_handle))
-    return res
-      .status(400)
-      .json(
-        'patch updateHandle requires valid id and valid user_handle in body'
-      )
+  let errorArray = []
+  if (!validateUserHandle(user_handle)) errorArray.push('invalid user_handle')
+  if (!validateId(id)) errorArray.push('invalid id')
+
+  if (errorArray.length > 0) {
+    const errorString = errorArray.join()
+    return res.json(errorString)
+  }
 
   const client = new Client()
   await client.connect()

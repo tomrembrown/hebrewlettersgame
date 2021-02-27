@@ -10,13 +10,12 @@
 const asyncMiddleware = require('../utils/asyncMiddleware')
 const getProfile = require('../model/getProfile')
 const { Client } = require('pg')
-const { validateId } = require('../../common/validation')
+const { validateId } = require('../common/validation')
 
 const getProfileController = asyncMiddleware(async (req, res) => {
   const { id } = req.params
 
-  if (!validateId(id))
-    return res.status(400).json('get profile requires valid id in parameters')
+  if (!validateId(id)) return res.json('invalid id')
 
   const client = new Client()
   await client.connect()

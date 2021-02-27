@@ -11,6 +11,10 @@
     "lerna": "^3.22.1"
   },
   "scripts": {
-    "createTables": "cd database && npm run createTables"
+    "createTables": "cd database && yarn run createTables",
+    "dev": "concurrently --kill-others \"cd server && yarn run dev\" \"cd client && yarn run start\""
+  },
+  "dependencies": {
+    "concurrently": "^6.0.0"
   }
 }

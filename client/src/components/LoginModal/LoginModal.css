@@ -21,3 +21,40 @@
 .background-white {
   background-color: white;
 }
+
+#loginModal header {
+  background-color: white;
+}
+
+#loginModal button.close {
+  color: black;
+  font-weight: 800;
+}
+
+#loginModal div.error {
+  color: red;
+  font-style: italic;
+  font-size: small;
+  text-align: left;
+}
+
+#loginModal div.generalerror {
+  color: red;
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
+#loginModal div.visible {
+  display: block;
+}
+
+#loginModal div.hidden {
+  display: none;
+}
+
+#loginModal article {
+  min-width: 375px;
+}

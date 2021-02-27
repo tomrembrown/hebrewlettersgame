@@ -14,15 +14,12 @@
 const asyncMiddleware = require('../utils/asyncMiddleware')
 const checkHandleTaken = require('../model/checkHandleTaken')
 const { Client } = require('pg')
-const { validateUserHandle } = require('../../common/validation')
+const { validateUserHandle } = require('../common/validation')
 
 const checkHandleTakenController = asyncMiddleware(async (req, res) => {
-  const { user_handle } = req.body
+  const { user_handle } = req.query
 
-  if (!validateUserHandle(user_handle))
-    return res
-      .status(400)
-      .json('checkHandleTaken route requires valid user_handle in body')
+  if (!validateUserHandle(user_handle)) return res.json('invalid user_handle')
 
   const client = new Client()
   await client.connect()

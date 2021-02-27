@@ -31,11 +31,10 @@ export const getScoreList = () => {
 }
 
 export const checkHandleTaken = (user_handle) => {
-  const data = { user_handle }
-  return fetch(endpoint + 'checkHandleTaken', {
+  const queryString = '?user_handle=' + user_handle
+  const totalURI = endpoint + 'checkHandleTaken/' + encodeURI(queryString)
+  return fetch(totalURI, {
     method: 'GET',
-    headers: { 'Content-type': 'application/json' },
-    body: JSON.stringify(data),
   }).then((response) => response.json())
 }
 
