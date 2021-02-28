@@ -1,4 +1,4 @@
-footer {
+.appfooter {
   position: fixed;
   background: #343a40;
   color: #686868;
@@ -8,9 +8,11 @@ footer {
   padding: 15px 25px;
   text-align: center;
   height: 50px;
+  display: flex;
+  justify-content: space-between;
 }
 
-footer a {
+.appfooter a {
   text-decoration: none;
   color: #dbe7f0;
 }

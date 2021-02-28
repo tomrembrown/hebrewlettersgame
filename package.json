@@ -12,7 +12,9 @@
   },
   "scripts": {
     "createTables": "cd database && yarn run createTables",
-    "dev": "concurrently --kill-others \"cd server && yarn run dev\" \"cd client && yarn run start\""
+    "dev": "concurrently --kill-others \"cd server && yarn run dev\" \"cd client && yarn run start\"",
+    "build": "cd client && yarn run build",
+    "server": "cd server && yarn run server"
   },
   "dependencies": {
     "concurrently": "^6.0.0"
