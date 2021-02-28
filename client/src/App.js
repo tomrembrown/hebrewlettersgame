@@ -8,6 +8,7 @@ import StartNewGame from './components/StartNewGame/StartNewGame'
 import LoginModal from './components/LoginModal/LoginModal'
 import columnInfoArray from './data/columnInfo.json'
 import { getScoreList } from './api/api-client'
+import Footer from './components/Footer/Footer'
 import './App.css'
 
 class App extends Component {
@@ -252,6 +253,7 @@ class App extends Component {
           stopGame={this.stopGame}
         />
         {mainSection}
+        <Footer />
       </div>
     )
   }
