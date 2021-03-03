@@ -1,4 +1,4 @@
-const endpoint = 'http://localhost:3001/'
+const endpoint = 'https://hebrewalphabetgame.com:3010/'
 
 export const register = (user_handle, email, password) => {
   const data = { user_handle, email, password }

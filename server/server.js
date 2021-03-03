@@ -1,5 +1,12 @@
 'use strict'
 
+const fs = require('fs')
+const https = require('https')
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.hebrewalphabetgame.com/privkey.pem', 'utf8')
+const certificate = fs.readFileSync('/etc/letsencrypt/live/www.hebrewalphabetgame.com/cert.pem', 'utf8')
+const ca = fs.readFileSync('/etc/letsencrypt/live/www.hebrewalphabetgame.com/chain.pem', 'utf8')
+
+const credentials = {key: privateKey, cert: certificate, ca: ca}
 const express = require('express')
 const cors = require('cors')
 
@@ -40,9 +47,11 @@ app.patch('/updateHandle', updateHandleController)
 //Delete
 app.delete('/profile/:id', deleteProfileController)
 
+const httpsServer = https.createServer(credentials, app)
+
 let logString =
   'Express started on ' + app.get('port') + '; press Ctrl-C to terminate'
 
-app.listen(app.get('port'), () => {
+httpsServer.listen(app.get('port'),'0.0.0.0', () => {
   console.log(logString)
 })
