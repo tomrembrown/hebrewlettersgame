@@ -11,84 +11,67 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-Clone GIT repository and download
+1. Ensure node, postgresql and yarn are installed. Since lerna is built on yarn, this uses yarn as the package manager. Node must be at least version 14
+
+2. Clone GIT repository and download
 
 ```
-git clone https://github.com/tomrembrown/hebrewlettersgame.git
+git clone https://github.com/tomrembrown/hebrewlettersgame.git hebrewalphabetgame
+cd hebrewalphabetgame
 ```
 
-Ensure node, postgresql and yarn are installed. Since lerna is built on yarn, this uses yarn as the package manager.
-
-Download and installs packages in package.json files for both front end and back end using yarn
+3. Download and install packages in various directories, and copy files to create .env
 
 ```
-npm install
+yarn install
 ```
 
-Create environment file in server directory (copy either .env_prod or .env_dev)
-
-```
-cd server
-cp .env_development .env
-```
-
-Determine port postgres runs on
+4. Determine port postgres runs on
 
 ```
 linux:  sudo netstat -plunt |grep postgres
 or in psql terminal type \conninfo
 ```
 
-Build PostgreSQL initial database, create user, and give user permissions
+5. Build PostgreSQL initial database, create user, and give user permissions
 
 ```
 su - postgres (enter postgres user password)
 psql --port (port determined for postgresql server)
+OR psql -h localhost(or other host name) -U (user able to create databases) --port (port - if not default 5432)
 CREATE DATABASE hebrew_game;
-CREATE ROLE hg_computer_access WITH ENCRYPTED PASSWORD (enter password here);
+CREATE ROLE hg_computer_access WITH ENCRYPTED PASSWORD (enter password here in single quotes);
 GRANT ALL PRIVILEGES ON DATABASE hebrew_game TO hg_computer_access;
 ALTER ROLE "hg_computer_access" WITH LOGIN;
+CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;
+\c hebrew_game
 CREATE EXTENSION IF NOT EXISTS citext;
 ```
 
-Adjust parameters in .env as necessary (such as postgres port and hg_computer_access password)
+6. Adjust parameters in .env as necessary (note .env files exist in root directory as well as database, client, and server)
 
-Create the database tables
-
-```
-yarn run createTables
-```
-
-If using existing data, upload the latest data set
+7. Create the database tables
 
 ```
-npm run uploadLatest
+yarn run createTables (from root directory)
 ```
 
-Increase the number of watches allowed for nodemon to work properly
+7. Development - For development mode, start the servers (command from root directory starts both react & express servers). React runs on a default port of localhost:3000
 
 ```
-echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+yarn run dev
 ```
 
-For development mode, start the server
+7. Production - For production mode, first build the bundles
 
 ```
-npm run dev
+yarn run build
 ```
 
-In development mode, run webpack-dev server in browser at localhost:8080
-
-For production mode, first build the bundles
+7. Production - On the server, run the server using pm2 (process manager) using:
 
 ```
-npm run build
-```
-
-In production mode, run the node-express server at localhost:3000
-
-```
-npm run prod
+yarn run server
 ```
 
 ## Running the tests

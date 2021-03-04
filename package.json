@@ -1,7 +1,6 @@
 {
   "name": "hebrewlettersgame",
   "version": "0.0.1",
-  "main": "index.js",
   "repository": "https://github.com/tomrembrown/hebrewlettersgame.git",
   "author": "Tom Brown <tombrown654321@protonmail.com>",
   "license": "MIT",
@@ -13,6 +12,7 @@
   "scripts": {
     "createTables": "cd database && yarn run createTables",
     "dev": "concurrently --kill-others \"cd server && yarn run dev\" \"cd client && yarn run start\"",
+    "initial": "yarn install && cd client && yarn install && cp .env_start .env && cd .. && cd database && yarn install && cp .env.production .env && cd .. && cd server && yarn install && cp .env.production .env",
     "build": "cd client && yarn run build",
     "server": "cd server && yarn run server"
   },

@@ -1,16 +1,21 @@
 'use strict'
 
-const fs = require('fs')
-const https = require('https')
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.hebrewalphabetgame.com/privkey.pem', 'utf8')
-const certificate = fs.readFileSync('/etc/letsencrypt/live/www.hebrewalphabetgame.com/cert.pem', 'utf8')
-const ca = fs.readFileSync('/etc/letsencrypt/live/www.hebrewalphabetgame.com/chain.pem', 'utf8')
+require('dotenv').config() // load the environment variables from .env
 
-const credentials = {key: privateKey, cert: certificate, ca: ca}
+// Set up secure server if running on production
+let credentials
+if (process.env.NODE_ENV === 'production') {
+  const sslLocation = process.env.SSL_LOCATION
+  const fs = require('fs')
+  const https = require('https')
+  const privateKey = fs.readFileSync(sslLocation + 'privkey.pem', 'utf8')
+  const certificate = fs.readFileSync(sslLocation + 'cert.pem', 'utf8')
+  const ca = fs.readFileSync(sslLocation + 'chain.pem', 'utf8')
+  credentials = { key: privateKey, cert: certificate, ca: ca }
+}
+
 const express = require('express')
 const cors = require('cors')
-
-require('dotenv').config() // load the environment variables from .env
 
 // Require the controllers for the REST API
 const registerController = require('./controllers/registerController')
@@ -47,11 +52,16 @@ app.patch('/updateHandle', updateHandleController)
 //Delete
 app.delete('/profile/:id', deleteProfileController)
 
-const httpsServer = https.createServer(credentials, app)
-
 let logString =
   'Express started on ' + app.get('port') + '; press Ctrl-C to terminate'
 
-httpsServer.listen(app.get('port'),'0.0.0.0', () => {
-  console.log(logString)
-})
+if (process.env.NODE_ENV === 'production') {
+  const httpsServer = https.createServer(credentials, app)
+  httpsServer.listen(app.get('port'), () => {
+    console.log(logString)
+  })
+} else {
+  app.listen(app.get('port'), () => {
+    console.log(logString)
+  })
+}
