@@ -3,12 +3,12 @@ import './Response.css'
 
 const Response = ({ correctOrWrong }) => {
   return (
-    <div
+    <section
       id="response"
       className={correctOrWrong ? correctOrWrong.toLowerCase() : ''}
     >
       {correctOrWrong}
-    </div>
+    </section>
   )
 }
 

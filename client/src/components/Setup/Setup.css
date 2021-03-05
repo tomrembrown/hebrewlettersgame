@@ -1,30 +1,30 @@
-.groupboxes {
+#setup .groupboxes {
   margin: 0 auto;
   width: 250px;
 }
 
-.layout {
+#setup .layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.5em;
 }
 
-.groupboxes > div {
+#setup .groupboxes > section {
   margin-bottom: 10px;
   align-items: left;
   text-align: left;
 }
 
-.groupboxes > h2 {
+#setup .groupboxes > h3 {
   text-align: left;
   margin-left: 8px;
 }
 
-.data {
+#setup .data {
   grid-row: span 2;
 }
 
-#setup > h1,
+#setup > h2,
 #setup > p {
   text-align: center;
 }

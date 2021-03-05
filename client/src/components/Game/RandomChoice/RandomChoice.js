@@ -29,23 +29,23 @@ const RandomChoice = ({
       )
     } else if (columnInfo.isHTML) {
       return (
-        <div>
+        <section id="random-choice">
           <div
-            id="random-choice"
+            id="guess"
             className={columnInfo.className}
             dangerouslySetInnerHTML={{ __html: guess }}
           ></div>
-          <p className="charactername">{columnInfo.display} Character</p>
-        </div>
+          <p className="font-name">{columnInfo.display} Character</p>
+        </section>
       )
     } else {
       return (
-        <div>
-          <div id="random-choice" className={columnInfo.className}>
+        <section id="random-choice">
+          <div id="guess" className={columnInfo.className}>
             {guess}
           </div>
-          <p className="charactername">{columnInfo.display} Character</p>
-        </div>
+          <p className="font-name">{columnInfo.display} Character</p>
+        </section>
       )
     }
   }

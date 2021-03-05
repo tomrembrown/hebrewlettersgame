@@ -4,13 +4,13 @@ import HighScoresTables from './HighScoresTable'
 
 const HighScores = ({ highScores }) => {
   return (
-    <div id="high-scores">
+    <main id="high-scores">
       {highScores.length === 0 ? (
-        <h1>No High Scores Yet</h1>
+        <h2>No High Scores Yet</h2>
       ) : (
         <HighScoresTables highScores={highScores} />
       )}
-    </div>
+    </main>
   )
 }
 

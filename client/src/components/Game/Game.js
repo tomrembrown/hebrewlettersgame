@@ -3,7 +3,7 @@ import Rank from './Rank/Rank'
 import GameInfo from './GameInfo/GameInfo'
 import GameBar from './GameBar/GameBar'
 import GameBoard from './GameBoard/GameBoard'
-import Modal from './Modal/Modal'
+import Modal from './GameModal/GameModal'
 import GameControlButtons from './GameControlButtons/GameControlButtons'
 import RandomChoice from './RandomChoice/RandomChoice'
 import gameData from '../../data/gamedata.json'
@@ -232,7 +232,7 @@ class Game extends Component {
     } = this.props
 
     return (
-      <div id="game">
+      <main id="game">
         <Modal
           restartGameModal={this.restartGameModal}
           exitGameModal={this.exitGameModal}
@@ -276,7 +276,7 @@ class Game extends Component {
           restartGame={this.restartGame}
           exitGame={this.exitGame}
         />
-      </div>
+      </main>
     )
   }
 }

@@ -269,7 +269,7 @@ class LoginModal extends Component {
     return (
       <div
         className={showHideClassName}
-        id="loginModal"
+        id="login-modal"
         tabIndex="-1"
         role="dialog"
         aria-labelledby="loginModalLabel"

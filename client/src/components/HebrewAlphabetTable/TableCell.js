@@ -1,5 +1,4 @@
 import React from 'react'
-import './TableCell.css'
 
 const TableCell = ({ columnInfo, rowSpan, letter }) => {
   if (rowSpan === 0) return ''

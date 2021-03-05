@@ -45,9 +45,9 @@ class HebrewAlphabetTable extends Component {
     const rowSpanArray = convertObjectToArray(rowSpanObject)
 
     return (
-      <div id="hebrew-alphabet">
-        <h1>The Hebrew Alphabet</h1>
-        <table className="alphabetTable">
+      <main id="hebrew-alphabet">
+        <h2>The Hebrew Alphabet</h2>
+        <table className="alphabet-table">
           <TableHeader changeSortColumn={this.changeSortColumn} />
           <tbody>
             {hebrewAlphabetDataSorted.map((letter, index) => (
@@ -60,7 +60,7 @@ class HebrewAlphabetTable extends Component {
             ))}
           </tbody>
         </table>
-      </div>
+      </main>
     )
   }
 }

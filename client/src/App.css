@@ -69,3 +69,17 @@
   font-family: 'Tinos', serif;
   font-size: 24px;
 }
+
+main {
+  padding-bottom: 60px;
+}
+
+.display-block,
+.visible {
+  display: block;
+}
+
+.display-none,
+.hidden {
+  display: none;
+}

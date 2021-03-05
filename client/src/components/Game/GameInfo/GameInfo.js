@@ -7,24 +7,24 @@ const Logo = ({ numCorrect, numWrong, gameScore }) => {
       ? ''
       : ((numCorrect / (numWrong + numCorrect)) * 100).toFixed(1) + '%'
   return (
-    <div id="game-info">
+    <section id="game-info">
       <div className="element">
-        <span className="text"> {' Number Correct: '}</span>{' '}
-        <span className="score"> {numCorrect} </span>
+        <p className="text"> {' Number Correct: '}</p>{' '}
+        <p className="score"> {numCorrect} </p>
       </div>
       <div className="element">
-        <span className="text"> {' Number Wrong: '}</span>{' '}
-        <span className="score"> {numWrong} </span>
+        <p className="text"> {' Number Wrong: '}</p>{' '}
+        <p className="score"> {numWrong} </p>
       </div>
       <div className="element">
-        <span className="text"> {' Percent Correct: '}</span>{' '}
-        <span className="score"> {percentCorrect} </span>
+        <p className="text"> {' Percent Correct: '}</p>{' '}
+        <p className="score"> {percentCorrect} </p>
       </div>
       <div className="element">
-        <span className="text"> {' Game Score: '}</span>{' '}
-        <span className="score"> {gameScore} </span>
+        <p className="text"> {' Game Score: '}</p>{' '}
+        <p className="score"> {gameScore} </p>
       </div>
-    </div>
+    </section>
   )
 }
 

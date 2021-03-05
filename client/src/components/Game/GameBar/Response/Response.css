@@ -5,10 +5,10 @@
   text-transform: uppercase;
 }
 
-.correct {
+#response.correct {
   color: green;
 }
 
-.wrong {
+#response.wrong {
   color: red;
 }

@@ -3,11 +3,13 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <footer className="appfooter">
-      &copy; Hebrew Alphabet Game - Copyright 2021
-      <span className="rightfooter">
+    <footer id="main-site-footer">
+      <p>
+        <small>Copyright &copy;2021 Hebrew Alphabet Game.</small>
+      </p>
+      <address>
         Built by <a href="http://www.tomrembrown.com">Tom Brown</a>
-      </span>
+      </address>
     </footer>
   )
 }

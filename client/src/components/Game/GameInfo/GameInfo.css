@@ -3,6 +3,11 @@
   justify-content: space-between;
 }
 
-.element {
+#game-info .element {
   padding: 8px;
+}
+
+#game-info p {
+  margin: 0;
+  display: inline;
 }

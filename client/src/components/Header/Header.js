@@ -1,5 +1,5 @@
 import React from 'react'
-import './NavigationBar.css'
+import './Header.css'
 import Navigation from './Navigation/Navigation'
 import Logo from './Logo/Logo'
 
@@ -14,8 +14,9 @@ const NavigationBar = ({
   stopGame,
 }) => {
   return (
-    <nav className="nav-wrapper">
+    <header id="main-site-header">
       <Logo />
+      <h1>Hebrew Alphabet Game</h1>
       <Navigation
         onMainRouteChange={onMainRouteChange}
         isSignedIn={isSignedIn}
@@ -26,7 +27,7 @@ const NavigationBar = ({
         startGame={startGame}
         stopGame={stopGame}
       />
-    </nav>
+    </header>
   )
 }
 

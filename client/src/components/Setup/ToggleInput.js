@@ -1,11 +1,11 @@
 import React from 'react'
-import './CheckBox.css'
+import './ToggleInput.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faToggleOn, faToggleOff } from '@fortawesome/free-solid-svg-icons'
 
-const CheckBox = ({ display, name, changeSetup, isChecked }) => {
+const ToggleInput = ({ display, name, changeSetup, isChecked }) => {
   return (
-    <div onClick={() => changeSetup(name)}>
+    <div onClick={() => changeSetup(name)} className="toggle-input">
       <p>
         <button>
           <FontAwesomeIcon icon={isChecked ? faToggleOn : faToggleOff} />
@@ -16,4 +16,4 @@ const CheckBox = ({ display, name, changeSetup, isChecked }) => {
   )
 }
 
-export default CheckBox
+export default ToggleInput

@@ -1,12 +1,4 @@
-.display-block {
-  display: block;
-}
-
-.display-none {
-  display: none;
-}
-
-.modal {
+#login-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -18,27 +10,35 @@
   text-align: center;
 }
 
-.background-white {
+#login-modal .background-white {
   background-color: white;
 }
 
-#loginModal header {
+#login-modal header {
   background-color: white;
+  display: grid;
+  padding-left: 14px;
+  align-items: center;
+  grid-template-columns: auto 60px;
 }
 
-#loginModal button.close {
+#login-modal button.close {
   color: black;
   font-weight: 800;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
 }
 
-#loginModal div.error {
+#login-modal div.error {
   color: red;
   font-style: italic;
   font-size: small;
   text-align: left;
 }
 
-#loginModal div.generalerror {
+#login-modal div.generalerror {
   color: red;
   text-align: center;
   font-style: italic;
@@ -47,14 +47,6 @@
   margin-bottom: 10px;
 }
 
-#loginModal div.visible {
-  display: block;
-}
-
-#loginModal div.hidden {
-  display: none;
-}
-
-#loginModal article {
+#login-modal article {
   min-width: 375px;
 }

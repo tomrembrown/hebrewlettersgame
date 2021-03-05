@@ -1,4 +1,4 @@
-import './Modal.css'
+import './GameModal.css'
 
 const Modal = ({
   restartGameModal,
@@ -7,14 +7,12 @@ const Modal = ({
   title,
   children,
 }) => {
-  const showHideClassName = isModalShown
-    ? 'modal display-block'
-    : 'modal display-none'
+  const showHideClassName = isModalShown ? 'display-block' : 'display-none'
 
   return (
     <div
       className={showHideClassName}
-      id="modal"
+      id="game-modal"
       tabIndex="-1"
       role="dialog"
       aria-labelledby="modalLabel"
@@ -23,9 +21,9 @@ const Modal = ({
       <div className="modal-background" onClick={restartGameModal}></div>
       <div className="modal-content shadow-5" role="document">
         <header>
-          <h5 className="modal-title" id="modalLabel">
+          <h3 className="modal-title" id="modalLabel">
             {title}
-          </h5>
+          </h3>
           <button
             type="button"
             className="close"
@@ -36,7 +34,7 @@ const Modal = ({
             &times;
           </button>
         </header>
-        <div className="modal-main">{children}</div>
+        <section className="modal-main">{children}</section>
         <footer>
           <button onClick={exitGameModal} className="exit-button">
             Exit Game

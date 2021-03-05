@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import NavigationBar from './components/NavigationBar/NavigationBar'
+import NavigationBar from './components/Header/Header'
 import Game from './components/Game/Game'
 import Setup from './components/Setup/Setup'
 import HebrewAlphabetTable from './components/HebrewAlphabetTable/HebrewAlphabetTable'
@@ -229,7 +229,7 @@ class App extends Component {
         )
         break
       default:
-        mainSection = <div>{'Did not find route'}</div>
+        mainSection = <main id="no-route">{'Did not find route'}</main>
     }
     return (
       <div className="App">

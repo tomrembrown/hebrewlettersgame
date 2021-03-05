@@ -11,8 +11,8 @@ const GameBoard = ({ gameDataUnique, randomDataColumn, clickLetterButton }) => {
 
     return (
       <section id="game-question">
-        <div id="question">What is the {randomDataColumn} for this letter?</div>
-        <div id="options">
+        <p>What is the {randomDataColumn} for this letter?</p>
+        <div id="game-options">
           {gameDataUnique.map((letter) => {
             return (
               <button

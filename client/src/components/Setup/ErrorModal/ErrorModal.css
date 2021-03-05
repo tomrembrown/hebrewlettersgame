@@ -1,4 +1,4 @@
-.modal {
+#error-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@
   z-index: 2000;
 }
 
-.modal-content {
+#error-modal .modal-content {
   width: 95vw;
   max-width: 300px;
   height: 90vh;
@@ -23,7 +23,7 @@
   flex-direction: column;
 }
 
-header {
+#error-modal header {
   color: #ffffff;
   background-color: #800000;
   display: grid;
@@ -32,12 +32,12 @@ header {
   grid-template-columns: auto 60px;
 }
 
-h5 {
+#error-modal h3 {
   margin: 0;
   text-align: left;
 }
 
-.close {
+#error-modal .close {
   border: none;
   display: flex;
   align-items: center;
@@ -51,18 +51,18 @@ h5 {
   padding: 10px;
 }
 
-.ok-button {
+#error-modal .ok-button {
   padding: 8px 16px;
 }
 
-.modal-main {
+#error-modal .modal-main {
   flex: 1;
   text-align: center;
   overflow: auto;
   padding: 14px;
 }
 
-footer {
+#error-modal footer {
   height: auto;
   text-align: right;
   border-top: solid 1px #cccccc;
@@ -70,12 +70,4 @@ footer {
   background-color: #fafafa;
   display: flex;
   justify-content: space-between;
-}
-
-.display-block {
-  display: block;
-}
-
-.display-none {
-  display: none;
 }

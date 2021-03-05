@@ -1,6 +1,6 @@
 import React from 'react'
 import './Setup.css'
-import CheckBox from './CheckBox'
+import ToggleInput from './ToggleInput'
 import columnInfoArray from '../../data/columnInfo.json'
 import ErrorModal from './ErrorModal/ErrorModal'
 
@@ -15,7 +15,7 @@ const Setup = ({
   setupErrorMessage,
 }) => {
   return (
-    <div id="setup">
+    <main id="setup">
       <ErrorModal
         exitErrorModal={exitErrorModal}
         isErrorModalShown={isErrorModalShown}
@@ -23,17 +23,17 @@ const Setup = ({
         <p>{setupErrorMessage}</p>
       </ErrorModal>
 
-      <h1>Setup</h1>
+      <h2>Setup</h2>
       <p>Points for Correct Answer: {baseScoreUnit}</p>
       <p>Penalty for Wrong Answer: {baseScoreUnit / 2}</p>
 
       <div className="layout">
-        <div className="groupboxes data">
-          <h2>Data Columns</h2>
+        <section className="groupboxes data">
+          <h3>Data Columns</h3>
           {columnInfoArray
             .filter((columnInfo) => columnInfo.columnType === 'data')
             .map((columnInfo) => (
-              <CheckBox
+              <ToggleInput
                 key={columnInfo.columnName}
                 display={columnInfo.display}
                 name={columnInfo.columnName}
@@ -41,13 +41,13 @@ const Setup = ({
                 isChecked={dataColumnsInTest.includes(columnInfo.columnName)}
               />
             ))}
-        </div>
-        <div className="groupboxes">
-          <h2>Character Styles</h2>
+        </section>
+        <section className="groupboxes">
+          <h3>Character Styles</h3>
           {columnInfoArray
             .filter((columnInfo) => columnInfo.columnType === 'character')
             .map((columnInfo) => (
-              <CheckBox
+              <ToggleInput
                 key={columnInfo.columnName}
                 display={columnInfo.display}
                 name={columnInfo.columnName}
@@ -57,19 +57,19 @@ const Setup = ({
                 )}
               />
             ))}
-        </div>
+        </section>
 
-        <div className="groupboxes">
-          <h2>Randomize Board?</h2>
-          <CheckBox
+        <section className="groupboxes">
+          <h3>Randomize Board?</h3>
+          <ToggleInput
             display={'Randomize'}
             name={'randomTest'}
             changeSetup={changeSetup}
             isChecked={randomTest}
           />
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   )
 }
 

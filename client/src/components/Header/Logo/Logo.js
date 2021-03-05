@@ -4,7 +4,7 @@ import aleph from './aleph.png'
 
 const Logo = () => {
   return (
-    <div className="logo">
+    <div id="main-site-logo">
       <img src={aleph} alt="logo" />
     </div>
   )

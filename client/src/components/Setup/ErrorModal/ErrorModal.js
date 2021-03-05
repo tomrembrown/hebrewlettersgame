@@ -1,14 +1,12 @@
 import './ErrorModal.css'
 
 const ErrorModal = ({ exitErrorModal, isErrorModalShown, children }) => {
-  const showHideClassName = isErrorModalShown
-    ? 'modal display-block'
-    : 'modal display-none'
+  const showHideClassName = isErrorModalShown ? 'display-block' : 'display-none'
 
   return (
     <div
       className={showHideClassName}
-      id="modal"
+      id="error-modal"
       tabIndex="-1"
       role="dialog"
       aria-labelledby="modalLabel"
@@ -17,9 +15,9 @@ const ErrorModal = ({ exitErrorModal, isErrorModalShown, children }) => {
       <div className="modal-background" onClick={exitErrorModal}></div>
       <div className="modal-content shadow-5" role="document">
         <header>
-          <h5 className="modal-title" id="modalLabel">
+          <h3 className="modal-title" id="modalLabel">
             Error in Setup
-          </h5>
+          </h3>
           <button
             type="button"
             className="close"
