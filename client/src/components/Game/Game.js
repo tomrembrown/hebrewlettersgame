@@ -3,7 +3,7 @@ import Rank from './Rank/Rank'
 import GameInfo from './GameInfo/GameInfo'
 import GameBar from './GameBar/GameBar'
 import GameBoard from './GameBoard/GameBoard'
-import Modal from './GameModal/GameModal'
+import GameModal from './GameModal/GameModal'
 import GameControlButtons from './GameControlButtons/GameControlButtons'
 import RandomChoice from './RandomChoice/RandomChoice'
 import gameData from '../../data/gamedata.json'
@@ -233,7 +233,7 @@ class Game extends Component {
 
     return (
       <main id="game">
-        <Modal
+        <GameModal
           restartGameModal={this.restartGameModal}
           exitGameModal={this.exitGameModal}
           isModalShown={isModalShown}
@@ -242,7 +242,7 @@ class Game extends Component {
           <p>Game Finished!</p>
           <p>Your Score is {gameScore}</p>
           {newHighScore ? <p>New personal all-time high score!</p> : ''}
-        </Modal>
+        </GameModal>
         {isSignedIn ? (
           <Rank
             user_score_rank={user_score_rank}

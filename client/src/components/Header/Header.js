@@ -3,7 +3,7 @@ import './Header.css'
 import Navigation from './Navigation/Navigation'
 import Logo from './Logo/Logo'
 
-const NavigationBar = ({
+const Header = ({
   onMainRouteChange,
   isSignedIn,
   mainRoute,
@@ -31,4 +31,4 @@ const NavigationBar = ({
   )
 }
 
-export default NavigationBar
+export default Header

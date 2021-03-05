@@ -1,6 +1,6 @@
 import './GameModal.css'
 
-const Modal = ({
+const GameModal = ({
   restartGameModal,
   exitGameModal,
   isModalShown,
@@ -48,4 +48,4 @@ const Modal = ({
   )
 }
 
-export default Modal
+export default GameModal

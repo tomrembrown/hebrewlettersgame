@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import NavigationBar from './components/Header/Header'
+import Header from './components/Header/Header'
 import Game from './components/Game/Game'
 import Setup from './components/Setup/Setup'
 import HebrewAlphabetTable from './components/HebrewAlphabetTable/HebrewAlphabetTable'
@@ -242,7 +242,7 @@ class App extends Component {
           successfullySignedIn={this.successfullySignedIn}
           closeLoginModal={this.closeLoginModal}
         />
-        <NavigationBar
+        <Header
           onMainRouteChange={this.onMainRouteChange}
           isSignedIn={isSignedIn}
           mainRoute={mainRoute}
