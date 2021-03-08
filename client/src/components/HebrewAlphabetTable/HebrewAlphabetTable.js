@@ -48,6 +48,19 @@ class HebrewAlphabetTable extends Component {
       <main id="hebrew-alphabet">
         <h2>The Hebrew Alphabet</h2>
         <table className="alphabet-table">
+          <caption>
+            Paleo-Hebrew, Aramaic-Biblical, and Modern Cursive characters for
+            Hebrew Alphabet, with letter values, names, meaning,
+            transliteration, and pronunciation
+          </caption>
+          <colgroup span="4"></colgroup>
+          <colgroup span="1"></colgroup>
+          <colgroup span="1"></colgroup>
+          <colgroup span="1"></colgroup>
+          <colgroup span="1"></colgroup>
+          <colgroup span="1"></colgroup>
+          <colgroup span="1"></colgroup>
+          <colgroup span="1"></colgroup>
           <TableHeader changeSortColumn={this.changeSortColumn} />
           <tbody>
             {hebrewAlphabetDataSorted.map((letter, index) => (

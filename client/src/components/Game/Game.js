@@ -216,7 +216,7 @@ class Game extends Component {
       correctOrWrong,
       isModalShown,
       timeLeft,
-      modalTitle,
+      modaltitle,
       randomCharacterColumn,
       randomDataColumn,
       dataSetChosen,
@@ -237,7 +237,7 @@ class Game extends Component {
           restartGameModal={this.restartGameModal}
           exitGameModal={this.exitGameModal}
           isModalShown={isModalShown}
-          title={modalTitle}
+          title={modaltitle}
         >
           <p>Game Finished!</p>
           <p>Your Score is {gameScore}</p>

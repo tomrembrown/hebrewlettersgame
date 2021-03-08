@@ -14,7 +14,7 @@ const Header = ({
   stopGame,
 }) => {
   return (
-    <header id="main-site-header">
+    <header role="banner" id="main-site-header">
       <Logo />
       <h1>Hebrew Alphabet Game</h1>
       <Navigation

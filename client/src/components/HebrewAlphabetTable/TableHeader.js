@@ -5,7 +5,9 @@ const TableHeader = ({ changeSortColumn }) => {
   return (
     <thead>
       <tr>
-        <th colSpan={4}>Character</th>
+        <th colSpan={4} scope="colgroup">
+          Character
+        </th>
         <th rowSpan={3}>
           <nobr>
             Power{' '}
@@ -15,7 +17,7 @@ const TableHeader = ({ changeSortColumn }) => {
             />
           </nobr>
         </th>
-        <th rowSpan={3}>
+        <th rowSpan={3} scope="col">
           <nobr>
             Position{' '}
             <FilterButton
@@ -24,7 +26,7 @@ const TableHeader = ({ changeSortColumn }) => {
             />
           </nobr>
         </th>
-        <th rowSpan={3}>
+        <th rowSpan={3} scope="col">
           <nobr>
             Value{' '}
             <FilterButton
@@ -33,13 +35,13 @@ const TableHeader = ({ changeSortColumn }) => {
             />
           </nobr>
         </th>
-        <th rowSpan={3}>
+        <th rowSpan={3} scope="col">
           <nobr>
             Name{' '}
             <FilterButton column={'name'} changeSortColumn={changeSortColumn} />
           </nobr>
         </th>
-        <th rowSpan={3}>
+        <th rowSpan={3} scope="col">
           <nobr>
             Meaning{' '}
             <FilterButton
@@ -48,7 +50,7 @@ const TableHeader = ({ changeSortColumn }) => {
             />
           </nobr>
         </th>
-        <th rowSpan={3}>
+        <th rowSpan={3} scole="col">
           <nobr>
             Transliteration{' '}
             <FilterButton
@@ -57,7 +59,7 @@ const TableHeader = ({ changeSortColumn }) => {
             />
           </nobr>
         </th>
-        <th rowSpan={3}>
+        <th rowSpan={3} scope="col">
           <nobr>
             Pronunciation{' '}
             <FilterButton
@@ -68,21 +70,23 @@ const TableHeader = ({ changeSortColumn }) => {
         </th>
       </tr>
       <tr>
-        <th rowSpan={2}>
+        <th rowSpan={2} scope="col">
           Paleo-
           <br />
           Hebrew
         </th>
-        <th colSpan={2}>Aramaic-Biblical</th>
-        <th rowSpan={2}>
+        <th colSpan={2} scope="col">
+          Aramaic-Biblical
+        </th>
+        <th rowSpan={2} scope="col">
           Modern
           <br />
           Cursive
         </th>
       </tr>
       <tr>
-        <th>Serif</th>
-        <th>Sans-serif</th>
+        <th scope="col">Serif</th>
+        <th scope="col">Sans-serif</th>
       </tr>
     </thead>
   )

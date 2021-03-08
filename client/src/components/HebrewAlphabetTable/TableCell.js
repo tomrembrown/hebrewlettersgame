@@ -8,7 +8,7 @@ const TableCell = ({ columnInfo, rowSpan, letter }) => {
         <td rowSpan={rowSpan} className="modernCursiveHebrew">
           <img
             src={`../HebrewCursiveFont/${letter.modernCursive}.png`}
-            alt={letter.modernCursive}
+            alt={`${letter.modernCursive} in modern cursive font`}
           />
         </td>
       )

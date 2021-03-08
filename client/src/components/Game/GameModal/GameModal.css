@@ -30,11 +30,14 @@
   padding-left: 14px;
   align-items: center;
   grid-template-columns: auto 60px;
+  height: 40px;
 }
 
 #game-modal h3 {
   margin: 0;
   text-align: left;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 #game-modal .close {
@@ -49,6 +52,8 @@
   color: white;
   font-size: 24px;
   padding: 10px;
+  margin-top: -14px;
+  margin-left: 14px;
 }
 
 #game-modal .exit-button {

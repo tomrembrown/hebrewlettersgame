@@ -15,19 +15,18 @@ const GameModal = ({
       id="game-modal"
       tabIndex="-1"
       role="dialog"
-      aria-labelledby="modalLabel"
+      aria-labelledby="gameModalLabel"
       aria-hidden="true"
     >
       <div className="modal-background" onClick={restartGameModal}></div>
       <div className="modal-content shadow-5" role="document">
         <header>
-          <h3 className="modal-title" id="modalLabel">
+          <h3 className="modal-title" id="gameModalLabel">
             {title}
           </h3>
           <button
             type="button"
             className="close"
-            data-dismiss="modal"
             aria-label="Close"
             onClick={restartGameModal}
           >
