@@ -22,15 +22,6 @@
   grid-template-columns: auto 60px;
 }
 
-#login-modal button.close {
-  color: black;
-  font-weight: 800;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-}
-
 #login-modal div.error {
   color: red;
   font-style: italic;
@@ -49,4 +40,21 @@
 
 #login-modal article {
   min-width: 375px;
+}
+
+#login-modal h3 {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+#login-modal button.close {
+  color: black;
+  font-weight: 800;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 16px;
 }

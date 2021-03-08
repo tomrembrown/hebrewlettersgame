@@ -277,7 +277,9 @@ class LoginModal extends Component {
       >
         <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center background-white">
           <header>
-            <h5 className="modal-title" id="loginModalLabel"></h5>
+            <h3 className="modal-title" id="loginModalLabel">
+              {isSignin ? 'Sign In' : 'Register'} Form
+            </h3>
             <button
               type="button"
               className="close"

@@ -1,4 +1,4 @@
-.toggle-input p button {
+.toggle-input label button {
   width: 23px;
   height: 23px;
   display: inline-block;
@@ -11,13 +11,17 @@
   background-color: white;
 }
 
-.toggle-input p svg {
+.toggle-input {
+  padding: 4px 0px;
+}
+
+.toggle-input label svg {
   font-size: 18px;
   color: black;
   margin-left: -4px;
   padding-top: 2px;
 }
 
-.toggle-input p:hover button {
+.toggle-input label:hover button {
   background: #a37666;
 }
