@@ -1,12 +1,6 @@
 import './GameModal.css'
 
-const GameModal = ({
-  restartGameModal,
-  exitGameModal,
-  isModalShown,
-  title,
-  children,
-}) => {
+const GameModal = ({ restartGameModal, isModalShown, title, children }) => {
   const showHideClassName = isModalShown ? 'display-block' : 'display-none'
 
   return (
@@ -35,9 +29,6 @@ const GameModal = ({
         </header>
         <section className="modal-main">{children}</section>
         <footer>
-          <button onClick={exitGameModal} className="exit-button">
-            Exit Game
-          </button>
           <button onClick={restartGameModal} className="restart-button">
             Restart Game
           </button>

@@ -1,6 +1,5 @@
 //const endpoint = 'https://hebrewalphabetgame.com:3010/'
 const endpoint = process.env.REACT_APP_API_URL + '/'
-console.log('endpoint: ' + endpoint)
 
 export const register = (user_handle, email, password) => {
   const data = { user_handle, email, password }

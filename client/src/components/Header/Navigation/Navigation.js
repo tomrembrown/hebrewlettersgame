@@ -1,87 +1,83 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './Navigation.css'
 
-class Navigation extends Component {
-  goToGameInner = () => {
-    this.props.startGame()
-    this.props.onMainRouteChange('game')
+function Navigation({
+  isSignedIn,
+  showSigninModal,
+  showRegisterModal,
+  signout,
+  startGame,
+  stopGame,
+}) {
+  const goToGameInner = () => {
+    startGame()
   }
 
-  signoutInner = () => {
-    this.props.signout()
+  const signoutInner = () => {
+    signout()
   }
 
-  signinInner = () => {
-    this.props.stopGame()
-    this.props.showSigninModal()
+  const signinInner = () => {
+    stopGame()
+    showSigninModal()
   }
 
-  registerInner = () => {
-    this.props.stopGame()
-    this.props.showRegisterModal()
+  const registerInner = () => {
+    stopGame()
+    showRegisterModal()
   }
 
-  render() {
-    const { onMainRouteChange, isSignedIn, mainRoute } = this.props
-
-    let registrationButtons
-    if (isSignedIn) {
-      registrationButtons = (
-        <li>
-          <a onClick={this.signoutInner}>Sign Out</a>
-        </li>
-      )
-    } else {
-      registrationButtons = [
-        <li key="signin">
-          <a onClick={this.signinInner}>Sign In</a>
-        </li>,
-        <li key="register">
-          <a onClick={this.registerInner}>Register</a>
-        </li>,
-      ]
-    }
-
-    return (
-      <nav>
-        <ul>
-          <li key="game">
-            <a
-              onClick={this.goToGameInner}
-              className={mainRoute === 'game' ? 'active' : ''}
-            >
-              Game
-            </a>
-          </li>
-          <li key="setup">
-            <a
-              onClick={() => onMainRouteChange('setup')}
-              className={mainRoute === 'setup' ? 'active' : ''}
-            >
-              Set Up
-            </a>
-          </li>
-          <li key="hebrewalphabet">
-            <a
-              onClick={() => onMainRouteChange('hebrewalphabet')}
-              className={mainRoute === 'hebrewalphabet' ? 'active' : ''}
-            >
-              Hebrew Alphabet
-            </a>
-          </li>
-          <li key="highscores">
-            <a
-              onClick={() => onMainRouteChange('highscores')}
-              className={mainRoute === 'highscores' ? 'active' : ''}
-            >
-              High Scores
-            </a>
-          </li>
-          {registrationButtons}
-        </ul>
-      </nav>
+  let registrationButtons
+  if (isSignedIn) {
+    registrationButtons = (
+      <li>
+        <button onClick={signoutInner}>Sign Out</button>
+      </li>
     )
+  } else {
+    registrationButtons = [
+      <li key="signin">
+        <button onClick={signinInner}>Sign In</button>
+      </li>,
+      <li key="register">
+        <button onClick={registerInner}>Register</button>
+      </li>,
+    ]
   }
+
+  return (
+    <nav>
+      <ul>
+        <li key="game">
+          <NavLink
+            to="/"
+            onClick={goToGameInner}
+            exact
+            activeClassName="active"
+          >
+            Game
+          </NavLink>
+        </li>
+        <li key="setup">
+          <NavLink to="/setup" exact activeClassName="active">
+            Set Up
+          </NavLink>
+        </li>
+        <li key="hebrewalphabet">
+          <NavLink to="/alphabet" exact activeClassName="active">
+            Hebrew Alphabet
+          </NavLink>
+        </li>
+        <li key="highscores">
+          <NavLink to="/scores" exact activeClassName="active">
+            High Scores
+          </NavLink>
+        </li>
+        {registrationButtons}
+      </ul>
+    </nav>
+  )
 }
 
 export default Navigation

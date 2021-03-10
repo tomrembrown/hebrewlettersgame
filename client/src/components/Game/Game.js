@@ -160,12 +160,6 @@ class Game extends Component {
     this.startGame()
   }
 
-  exitGame = () => {
-    this.stopGame()
-    this.props.onMainRouteChange('startnewgame')
-    this.props.signout()
-  }
-
   showModal = () => {
     this.setState({ isModalShown: true })
   }
@@ -176,11 +170,6 @@ class Game extends Component {
   restartGameModal = () => {
     this.hideModal()
     this.restartGame()
-  }
-
-  exitGameModal = () => {
-    this.hideModal()
-    this.exitGame()
   }
 
   tick() {
@@ -235,7 +224,6 @@ class Game extends Component {
       <main id="game">
         <GameModal
           restartGameModal={this.restartGameModal}
-          exitGameModal={this.exitGameModal}
           isModalShown={isModalShown}
           title={modaltitle}
         >
@@ -272,10 +260,7 @@ class Game extends Component {
             />
           </div>
         </div>
-        <GameControlButtons
-          restartGame={this.restartGame}
-          exitGame={this.exitGame}
-        />
+        <GameControlButtons restartGame={this.restartGame} />
       </main>
     )
   }

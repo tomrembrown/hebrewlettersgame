@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
-import { Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Game from './components/Game/Game'
 import Setup from './components/Setup/Setup'
 import HebrewAlphabetTable from './components/HebrewAlphabetTable/HebrewAlphabetTable'
 import HighScores from './components/HighScores/HighScores'
-import StartNewGame from './components/StartNewGame/StartNewGame'
 import LoginModal from './components/LoginModal/LoginModal'
 import columnInfoArray from './data/columnInfo.json'
-import { getScoreList } from './api/api-client'
 import Footer from './components/Footer/Footer'
+import PageNotFound from './components/PageNotFound/PageNotFound'
 import './App.css'
 
 class App extends Component {
@@ -18,7 +17,6 @@ class App extends Component {
     this.state = {
       gameInProgress: true,
       isSignedIn: false,
-      mainRoute: 'game',
       signinOrRegister: 'signin',
       isLoginModalShown: false,
       characterColumnsInTest: ['aramaicBiblicalSerif'],
@@ -30,16 +28,6 @@ class App extends Component {
       user_handle: null,
       user_high_score: null,
       user_score_rank: null,
-      highScores: [],
-    }
-  }
-
-  onMainRouteChange = (mainRoute) => {
-    this.setState({ mainRoute: mainRoute })
-    if (mainRoute === 'highscores') {
-      getScoreList().then((scoreList) => {
-        this.setState({ highScores: scoreList })
-      })
     }
   }
 
@@ -167,7 +155,6 @@ class App extends Component {
 
   render() {
     const {
-      mainRoute,
       isSignedIn,
       signinOrRegister,
       isLoginModalShown,
@@ -181,79 +168,71 @@ class App extends Component {
       user_handle,
       user_score_rank,
       user_high_score,
-      highScores,
     } = this.state
-    let mainSection = <div>{'Loading...'}</div>
-    switch (mainRoute) {
-      case 'game':
-        mainSection = (
-          <Game
-            onMainRouteChange={this.onMainRouteChange}
-            baseScoreUnit={this.getBaseScoreUnit()}
-            signout={this.signout}
-            loadUser={this.loadUser}
-            gameInProgress={gameInProgress}
-            isSignedIn={isSignedIn}
-            characterColumnsInTest={characterColumnsInTest}
-            dataColumnsInTest={dataColumnsInTest}
-            randomTest={randomTest}
-            user_id={user_id}
-            user_handle={user_handle}
-            user_score_rank={user_score_rank}
-            user_high_score={user_high_score}
-          />
-        )
-        break
-      case 'setup':
-        mainSection = (
-          <Setup
-            baseScoreUnit={this.getBaseScoreUnit()}
-            changeSetup={this.changeSetup}
-            characterColumnsInTest={characterColumnsInTest}
-            dataColumnsInTest={dataColumnsInTest}
-            randomTest={randomTest}
-            exitErrorModal={this.exitErrorModal}
-            isErrorModalShown={isErrorModalShown}
-            setupErrorMessage={setupErrorMessage}
-          />
-        )
-        break
-      case 'hebrewalphabet':
-        mainSection = <HebrewAlphabetTable />
-        break
-      case 'highscores':
-        mainSection = <HighScores highScores={highScores} />
-        break
-      case 'startnewgame':
-        mainSection = (
-          <StartNewGame onMainRouteChange={this.onMainRouteChange} />
-        )
-        break
-      default:
-        mainSection = <main id="no-route">{'Did not find route'}</main>
-    }
     return (
       <div className="App">
-        <LoginModal
-          isLoginModalShown={isLoginModalShown}
-          signinOrRegister={signinOrRegister}
-          showRegisterModal={this.showRegisterModal}
-          showSigninModal={this.showSigninModal}
-          loadUser={this.loadUser}
-          successfullySignedIn={this.successfullySignedIn}
-          closeLoginModal={this.closeLoginModal}
-        />
-        <Header
-          onMainRouteChange={this.onMainRouteChange}
-          isSignedIn={isSignedIn}
-          mainRoute={mainRoute}
-          showSigninModal={this.showSigninModal}
-          showRegisterModal={this.showRegisterModal}
-          signout={this.signout}
-          startGame={this.startGame}
-          stopGame={this.stopGame}
-        />
-        {mainSection}
+        <Router>
+          <LoginModal
+            isLoginModalShown={isLoginModalShown}
+            signinOrRegister={signinOrRegister}
+            showRegisterModal={this.showRegisterModal}
+            showSigninModal={this.showSigninModal}
+            loadUser={this.loadUser}
+            successfullySignedIn={this.successfullySignedIn}
+            closeLoginModal={this.closeLoginModal}
+          />
+          <Header
+            isSignedIn={isSignedIn}
+            showSigninModal={this.showSigninModal}
+            showRegisterModal={this.showRegisterModal}
+            signout={this.signout}
+            startGame={this.startGame}
+            stopGame={this.stopGame}
+          />
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={(props) => (
+                <Game
+                  {...props}
+                  baseScoreUnit={this.getBaseScoreUnit()}
+                  signout={this.signout}
+                  loadUser={this.loadUser}
+                  gameInProgress={gameInProgress}
+                  isSignedIn={isSignedIn}
+                  characterColumnsInTest={characterColumnsInTest}
+                  dataColumnsInTest={dataColumnsInTest}
+                  randomTest={randomTest}
+                  user_id={user_id}
+                  user_handle={user_handle}
+                  user_score_rank={user_score_rank}
+                  user_high_score={user_high_score}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/setup"
+              render={(props) => (
+                <Setup
+                  {...props}
+                  baseScoreUnit={this.getBaseScoreUnit()}
+                  changeSetup={this.changeSetup}
+                  characterColumnsInTest={characterColumnsInTest}
+                  dataColumnsInTest={dataColumnsInTest}
+                  randomTest={randomTest}
+                  exitErrorModal={this.exitErrorModal}
+                  isErrorModalShown={isErrorModalShown}
+                  setupErrorMessage={setupErrorMessage}
+                />
+              )}
+            />
+            <Route exact path="/alphabet" component={HebrewAlphabetTable} />
+            <Route exact path="/scores" component={HighScores} />
+            <Route component={PageNotFound} />
+          </Switch>
+        </Router>
         <Footer />
       </div>
     )

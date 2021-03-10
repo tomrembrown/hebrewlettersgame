@@ -4,9 +4,7 @@ import Navigation from './Navigation/Navigation'
 import Logo from './Logo/Logo'
 
 const Header = ({
-  onMainRouteChange,
   isSignedIn,
-  mainRoute,
   showSigninModal,
   showRegisterModal,
   signout,
@@ -18,9 +16,7 @@ const Header = ({
       <Logo />
       <h1>Hebrew Alphabet Game</h1>
       <Navigation
-        onMainRouteChange={onMainRouteChange}
         isSignedIn={isSignedIn}
-        mainRoute={mainRoute}
         showSigninModal={showSigninModal}
         showRegisterModal={showRegisterModal}
         signout={signout}
