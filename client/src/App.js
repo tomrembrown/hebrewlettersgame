@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Router, Route, Switch } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Game from './components/Game/Game'
 import Setup from './components/Setup/Setup'
