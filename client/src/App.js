@@ -154,6 +154,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("URL: " + window.location.href)
     const {
       isSignedIn,
       signinOrRegister,
