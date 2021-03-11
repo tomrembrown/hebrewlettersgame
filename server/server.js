@@ -4,10 +4,11 @@ require('dotenv').config() // load the environment variables from .env
 
 // Set up secure server if running on production
 let credentials
+let https
 if (process.env.NODE_ENV === 'production') {
   const sslLocation = process.env.SSL_LOCATION
   const fs = require('fs')
-  const https = require('https')
+  https = require('https')
   const privateKey = fs.readFileSync(sslLocation + 'privkey.pem', 'utf8')
   const certificate = fs.readFileSync(sslLocation + 'cert.pem', 'utf8')
   const ca = fs.readFileSync(sslLocation + 'chain.pem', 'utf8')
