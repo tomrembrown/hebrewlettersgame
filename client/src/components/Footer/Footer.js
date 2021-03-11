@@ -3,7 +3,7 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <footer role="contentinfo" id="main-site-footer">
+    <footer id="main-site-footer">
       <p>
         <small>Copyright &copy;2021 Hebrew Alphabet Game.</small>
       </p>

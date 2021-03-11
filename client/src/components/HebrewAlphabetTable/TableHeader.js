@@ -8,65 +8,45 @@ const TableHeader = ({ changeSortColumn }) => {
         <th colSpan={4} scope="colgroup">
           Character
         </th>
-        <th rowSpan={3}>
-          <nobr>
-            Power{' '}
-            <FilterButton
-              column={'power'}
-              changeSortColumn={changeSortColumn}
-            />
-          </nobr>
+        <th className="nobreak" rowSpan={3}>
+          Power{' '}
+          <FilterButton column={'power'} changeSortColumn={changeSortColumn} />
         </th>
-        <th rowSpan={3} scope="col">
-          <nobr>
-            Position{' '}
-            <FilterButton
-              column={'position'}
-              changeSortColumn={changeSortColumn}
-            />
-          </nobr>
+        <th className="nobreak" rowSpan={3} scope="col">
+          Position{' '}
+          <FilterButton
+            column={'position'}
+            changeSortColumn={changeSortColumn}
+          />
         </th>
-        <th rowSpan={3} scope="col">
-          <nobr>
-            Value{' '}
-            <FilterButton
-              column={'value'}
-              changeSortColumn={changeSortColumn}
-            />
-          </nobr>
+        <th className="nobreak" rowSpan={3} scope="col">
+          Value{' '}
+          <FilterButton column={'value'} changeSortColumn={changeSortColumn} />
         </th>
-        <th rowSpan={3} scope="col">
-          <nobr>
-            Name{' '}
-            <FilterButton column={'name'} changeSortColumn={changeSortColumn} />
-          </nobr>
+        <th className="nobreak" rowSpan={3} scope="col">
+          Name{' '}
+          <FilterButton column={'name'} changeSortColumn={changeSortColumn} />
         </th>
-        <th rowSpan={3} scope="col">
-          <nobr>
-            Meaning{' '}
-            <FilterButton
-              column={'meaning'}
-              changeSortColumn={changeSortColumn}
-            />
-          </nobr>
+        <th className="nobreak" rowSpan={3} scope="col">
+          Meaning{' '}
+          <FilterButton
+            column={'meaning'}
+            changeSortColumn={changeSortColumn}
+          />
         </th>
-        <th rowSpan={3} scole="col">
-          <nobr>
-            Transliteration{' '}
-            <FilterButton
-              column={'transliteration'}
-              changeSortColumn={changeSortColumn}
-            />
-          </nobr>
+        <th className="nobreak" rowSpan={3} scope="col">
+          Transliteration{' '}
+          <FilterButton
+            column={'transliteration'}
+            changeSortColumn={changeSortColumn}
+          />
         </th>
-        <th rowSpan={3} scope="col">
-          <nobr>
-            Pronunciation{' '}
-            <FilterButton
-              column={'pronunciation'}
-              changeSortColumn={changeSortColumn}
-            />
-          </nobr>
+        <th className="nobreak" rowSpan={3} scope="col">
+          Pronunciation{' '}
+          <FilterButton
+            column={'pronunciation'}
+            changeSortColumn={changeSortColumn}
+          />
         </th>
       </tr>
       <tr>

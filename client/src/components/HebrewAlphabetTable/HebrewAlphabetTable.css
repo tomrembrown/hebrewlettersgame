@@ -31,3 +31,7 @@
   font-size: smaller;
   font-style: italic;
 }
+
+#hebrew-alphabet .nobreak {
+  white-space: nowrap;
+}

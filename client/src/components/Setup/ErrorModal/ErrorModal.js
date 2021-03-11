@@ -15,7 +15,7 @@ const ErrorModal = ({ exitErrorModal, isErrorModalShown, children }) => {
       <div className="modal-background" onClick={exitErrorModal}></div>
       <div className="modal-content shadow-5" role="document">
         <header>
-          <h3 className="modal-title" id="erorrModalLabel">
+          <h3 className="modal-title" id="errorModalLabel">
             Error in Setup
           </h3>
           <button

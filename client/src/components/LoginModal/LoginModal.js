@@ -289,15 +289,15 @@ class LoginModal extends Component {
               &times;
             </button>
           </header>
-          <main className="pa4 black-80">
+          <div className="pa4 black-80">
             <div className="measure">
-              <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
+              <fieldset className="ba b--transparent ph0 mh0">
                 <legend className="f1 fw6 ph0 mh0">
                   {isSignin ? 'Sign In' : 'Register'}
                 </legend>
                 {isSignin ? '' : user_handle}
                 <div className="mt3">
-                  <label className="db fw6 lh-copy f6" htmlFor="email-address">
+                  <label className="db fw6 lh-copy f6" htmlFor="email">
                     Email
                   </label>
                   <input
@@ -362,7 +362,7 @@ class LoginModal extends Component {
                 </div>
               </div>
             </div>
-          </main>
+          </div>
         </article>
       </div>
     )

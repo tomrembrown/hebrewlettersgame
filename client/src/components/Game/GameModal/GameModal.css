@@ -69,12 +69,10 @@
 
 #game-modal footer {
   height: auto;
-  text-align: right;
   border-top: solid 1px #cccccc;
   padding: 14px;
   background-color: #fafafa;
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
 }
 
 #game-modal .display-block {

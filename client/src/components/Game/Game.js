@@ -227,7 +227,7 @@ class Game extends Component {
           isModalShown={isModalShown}
           title={modaltitle}
         >
-          <p>Game Finished!</p>
+          <h4>Game Finished!</h4>
           <p>Your Score is {gameScore}</p>
           {newHighScore ? <p>New personal all-time high score!</p> : ''}
         </GameModal>
