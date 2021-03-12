@@ -87,3 +87,14 @@ main {
 button {
   cursor: pointer;
 }
+
+.button-3d {
+  padding: 5px;
+  background: linear-gradient(
+    to bottom,
+    #e2e2e2 0%,
+    #dbdbdb 50%,
+    #d1d1d1 51%,
+    #fefefe 100%
+  );
+}

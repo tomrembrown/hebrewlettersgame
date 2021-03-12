@@ -29,7 +29,7 @@ const ErrorModal = ({ exitErrorModal, isErrorModalShown, children }) => {
         </header>
         <section className="modal-main">{children}</section>
         <footer>
-          <button onClick={exitErrorModal} className="ok-button">
+          <button onClick={exitErrorModal} className="ok-button button-3d">
             Ok
           </button>
         </footer>
