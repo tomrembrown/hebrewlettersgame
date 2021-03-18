@@ -1,16 +1,26 @@
-* {
-  box-sizing: border-box;
-}
+@import-normalize;
 
 html {
   font-family: sans-serif;
+  box-sizing: border-box;
 }
 
 html,
 body,
+:root,
 #root,
 .App {
   height: 100%;
   margin: 0px;
   padding: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:root {
+  font-size: 16px;
 }
