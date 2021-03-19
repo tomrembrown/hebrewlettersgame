@@ -1,5 +1,4 @@
 import React from 'react'
-import './RandomChoice.css'
 import columnInfoArray from '../../../data/columnInfo.json'
 
 const RandomChoice = ({

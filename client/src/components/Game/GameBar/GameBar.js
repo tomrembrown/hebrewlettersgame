@@ -1,5 +1,4 @@
 import React from 'react'
-import './GameBar.css'
 import Response from './Response/Response'
 import Timer from './Timer/Timer'
 

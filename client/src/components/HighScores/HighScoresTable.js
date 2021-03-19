@@ -1,5 +1,4 @@
 import React from 'react'
-import './HighScores.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrophy } from '@fortawesome/free-solid-svg-icons'
 

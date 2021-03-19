@@ -9,7 +9,6 @@ import RandomChoice from './RandomChoice/RandomChoice'
 import gameData from '../../data/gamedata.json'
 import columnInfoArray from '../../data/columnInfo.json'
 import { shuffle } from '../../utils/arrayManipulation'
-import './Game.css'
 import { updateHighScore } from '../../api/api-client'
 
 class Game extends Component {

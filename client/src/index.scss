@@ -1,7 +1,8 @@
+/* Most styles in App.css - only styles related to normalizing and resetting in here */
+
 @import-normalize;
 
 html {
-  font-family: sans-serif;
   box-sizing: border-box;
 }
 
@@ -19,6 +20,15 @@ body,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+* {
+  text-align: center;
+  align-items: center;
+}
+
+input[type] {
+  text-align: left;
 }
 
 :root {

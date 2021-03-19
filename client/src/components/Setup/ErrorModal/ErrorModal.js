@@ -1,4 +1,4 @@
-import './ErrorModal.css'
+import React from 'react'
 
 const ErrorModal = ({ exitErrorModal, isErrorModalShown, children }) => {
   const showHideClassName = isErrorModalShown ? 'display-block' : 'display-none'

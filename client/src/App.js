@@ -9,7 +9,7 @@ import LoginModal from './components/LoginModal/LoginModal'
 import columnInfoArray from './data/columnInfo.json'
 import Footer from './components/Footer/Footer'
 import PageNotFound from './components/PageNotFound/PageNotFound'
-import './App.css'
+import './App.scss'
 
 class App extends Component {
   constructor() {
@@ -154,7 +154,7 @@ class App extends Component {
   }
 
   render() {
-    console.log("URL: " + window.location.href)
+    console.log('URL: ' + window.location.href)
     const {
       isSignedIn,
       signinOrRegister,

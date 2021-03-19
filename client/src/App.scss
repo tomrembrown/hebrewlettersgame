@@ -1,0 +1,803 @@
+/**
+ * Primary style sheet
+ * Resets and normalize are included in index.scss
+ * All display variables are in _displaysettings.scss
+ *
+ * Contents of this file:
+ *
+ * CH01 - Fonts
+ * CH02 - Colours and Borders
+ * CH03 - Buttons and Toggles
+ * CH04 - Modals
+ * Overall Layout controls where header, footer, and main section of page is - and
+ * overall dimensions of these. Where things are within these parts are in their
+ * respective chpaters
+ * CH05 - Overall Layout
+ * CH06 - Header and Nav Styles
+ * CH07 - Footer Styles
+ * Anything covered in an above section - like fonts or colours/border - in one of the
+ * pages is in the fonts/colors-borders sections - not the page section below
+ * CH08 - Main Game Page
+ * CH09 - Setup Page
+ * CH10 - Hebrew Alphabet Table Page
+ * CH11 - High Scores Page
+ * CH12 - Media Queries
+ * 
+**/
+@import './displaysettings';
+
+/**
+ * CH01 - Fonts
+**/
+@font-face {
+  font-family: 'Open Sans Hebrew';
+  src: url('./OpenSansHebrewFont/OpenSansHebrew-Regular.eot'); /* IE9 Compat Modes */
+  src: /*IE6-IE8 */ url('./OpenSansHebrewFont/OpenSansHebrew-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* Super Modern Browsers */
+      url('./OpenSansHebrewFont/OpenSansHebrew-Regular.woff2') format('woff2'),
+    /* Modern Browsers */
+      url('./OpenSansHebrewFont/OpenSansHebrew-Regular.woff') format('woff'),
+    /* Safari, Android, iOS */
+      url('./OpenSansHebrewFont/OpenSansHebrew-Regular.ttf') format('truetype'),
+    /* Legacy iOS */
+      url('./OpenSansHebrewFont/OpenSansHebrew-Regular.svg#OpenSansHebrew-Regular')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Digital Font';
+  src: url('./DigitalFont/DigitalFont.eot'); /* IE9 Compat Modes */
+  src: /*IE6-IE8 */ url('./DigitalFont/DigitalFont.eot?#iefix')
+      format('embedded-opentype'),
+    /* Super Modern Browsers */ url('./DigitalFont/DigitalFont.woff2')
+      format('woff2'),
+    /* Modern Browsers */ url('./DigitalFont/DigitalFont.woff') format('woff'),
+    /* Safari, Android, iOS */ url('./DigitalFont/DigitalFont.ttf')
+      format('truetype'),
+    /* Legacy iOS */ url('./DigitalFont/DigitalFont.svg#DigitalFont')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: Verdana, Arial, serif;
+  font-size: 100%;
+}
+
+#main-site-header h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#main-site-header nav ul {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.aramaicBiblicalSerif {
+  font-family: 'Tinos', serif;
+  direction: rtl;
+  font-size: 1.875rem;
+  width: auto;
+  height: 2.5rem;
+}
+
+.aramaicBiblicalSansSerif {
+  font-family: 'Open Sans Hebrew', sans-serif;
+  direction: rtl;
+  font-size: 1.875rem;
+  width: auto;
+  height: 2.5rem;
+}
+
+.paleoHebrew {
+  font-family: Arial;
+  direction: rtl;
+  font-size: 1.875rem;
+  width: auto;
+  height: 2.5rem;
+}
+
+.modernCursive > img {
+  width: 1.25rem;
+}
+
+.transliteration {
+  font-family: 'Tinos', serif;
+  font-size: 2rem;
+}
+
+/**
+ * CH02 - Colours, Borders, and Text Shadows
+**/
+body {
+  background-color: white;
+}
+
+#main-site-footer {
+  background: #343a40;
+  color: #686868;
+}
+
+#main-site-footer a {
+  color: #dbe7f0;
+}
+
+#game-modal .modal-content {
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+#game-modal header {
+  color: #ffffff;
+  background-color: #800000;
+}
+
+#game-modal .close {
+  color: white;
+}
+
+#game-modal footer {
+  border-top: solid 1px #cccccc;
+  background-color: #fafafa;
+}
+
+#main-site-header {
+  background: #3d3331;
+}
+
+#main-site-header h1 {
+  color: #c59888;
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
+    0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424;
+}
+
+#main-site-header nav ul li a,
+#main-site-header nav ul li button {
+  background: #5f3222;
+  color: #eee;
+  border-top: 2px solid #815444;
+  border-right: 2px solid #3d1000;
+  border-bottom: 2px solid #3d1000;
+  border-left: 2px solid #815444;
+}
+
+#main-site-header nav ul li a:hover,
+#main-site-header nav ul li button:hover,
+#main-site-header nav ul li a.active,
+#main-site-header nav ul li button.active {
+  background: #a37666;
+  color: #000;
+  border-top: 2px solid #815444;
+  border-right: 2px solid #c59888;
+  border-bottom: 2px solid #c59888;
+  border-left: 2px solid #815444;
+}
+
+#game-board {
+  background-color: #f4f5e2;
+  border: 1px solid #3d3331;
+  border-radius: 6px;
+}
+
+#game-question button:hover {
+  background-color: #f8dfdf;
+}
+
+#random-choice #guess {
+  border: 1px solid #3d3331;
+  color: maroon;
+  border-radius: 6px;
+}
+
+#random-choice .font-name {
+  color: #444;
+}
+
+#hebrew-alphabet table.alphabet-table {
+  border: 2px solid #333;
+}
+
+#hebrew-alphabet table.alphabet-table td,
+#hebrew-alphabet table.alphabet-table th {
+  border: 1px solid #777;
+}
+
+#hebrew-alphabet table.alphabet-table thead {
+  border: 2px solid #333;
+}
+
+#high-scores-table {
+  border: 5px solid darkcyan;
+}
+
+#high-scores-table tr.top-row {
+  background-color: #777;
+  color: white;
+}
+
+#high-scores-table .second-row {
+  background-color: #555;
+  color: #ccc;
+}
+
+#high-scores-table tr.datarow:nth-child(even) {
+  background-color: #555;
+}
+
+#high-scores-table tr.datarow:nth-child(odd) {
+  background-color: #333;
+}
+
+#high-scores-table tr.first {
+  color: limegreen;
+}
+
+#high-scores-table tr.other {
+  color: white;
+}
+
+#high-scores-table .goldtrophy {
+  color: #ffd700;
+}
+
+#high-scores-table .silvertrophy {
+  color: #c0c0c0;
+}
+
+#high-scores-table .bronzetrophy {
+  color: #cd7f32;
+}
+
+/**
+ * CH03 - Buttons and Toggles
+**/
+button {
+  cursor: pointer;
+}
+
+.button-3d {
+  padding: 0.3125rem;
+  background: linear-gradient(
+    to bottom,
+    #e2e2e2 0%,
+    #dbdbdb 50%,
+    #d1d1d1 51%,
+    #fefefe 100%
+  );
+}
+
+.toggle-input label button {
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 6px;
+  border-radius: 3px;
+  border: none;
+  background-color: white;
+}
+
+.toggle-input {
+  padding: 4px 0px;
+  text-align: left;
+}
+
+.toggle-input label svg {
+  font-size: 18px;
+  color: black;
+  margin-left: -4px;
+  padding-top: 2px;
+}
+
+/**
+ * CH04 - Modals
+**/
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+#game-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 2%;
+  z-index: 2000;
+}
+
+#game-modal .modal-content {
+  width: 95vw;
+  max-width: 300px;
+  height: 90vh;
+  max-height: 300px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#game-modal header {
+  display: grid;
+  padding-left: 14px;
+  grid-template-columns: auto 60px;
+  height: 40px;
+}
+
+#game-modal h3 {
+  margin: 0;
+  text-align: left;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#game-modal .close {
+  border: none;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  font-size: 24px;
+  padding: 10px;
+  margin-top: -14px;
+  margin-left: 14px;
+}
+
+#game-modal .restart-button {
+  padding: 8px 16px;
+}
+
+#game-modal .modal-main {
+  flex: 1;
+  text-align: center;
+  overflow: auto;
+  padding: 14px;
+}
+
+#game-modal footer {
+  height: auto;
+  padding: 14px;
+}
+
+#login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 2%;
+  z-index: 2000;
+  text-align: center;
+}
+
+#login-modal .background-white {
+  background-color: white;
+}
+
+#login-modal header {
+  background-color: white;
+  display: grid;
+  padding-left: 14px;
+  align-items: center;
+  grid-template-columns: auto 60px;
+}
+
+#login-modal div.error {
+  color: red;
+  font-style: italic;
+  font-size: small;
+  text-align: left;
+}
+
+#login-modal div.generalerror {
+  color: red;
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
+#login-modal article {
+  min-width: 375px;
+}
+
+#login-modal h3 {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+#login-modal button.close {
+  color: black;
+  font-weight: 800;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  margin-left: 16px;
+}
+
+#error-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 2%;
+  z-index: 2000;
+}
+
+#error-modal .modal-content {
+  width: 95vw;
+  max-width: 300px;
+  height: 90vh;
+  max-height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#error-modal header {
+  color: #ffffff;
+  background-color: #800000;
+  display: grid;
+  padding-left: 14px;
+  align-items: center;
+  grid-template-columns: auto 60px;
+  height: 45px;
+}
+
+#error-modal h3 {
+  margin: 0;
+  text-align: left;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#error-modal .close {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  margin-top: -14px;
+  margin-left: 14px;
+}
+
+#error-modal .ok-button {
+  padding: 8px 16px;
+}
+
+#error-modal .modal-main {
+  flex: 1;
+  text-align: center;
+  overflow: auto;
+  padding: 14px;
+}
+
+#error-modal footer {
+  height: auto;
+  text-align: right;
+  border-top: solid 1px #cccccc;
+  padding: 14px;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+}
+
+/**
+ * CH05 - Overall Layout
+**/
+main {
+  padding-bottom: 3.75rem;
+}
+
+#main-site-footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 0.9375rem 1.5625rem;
+  height: 3.125rem;
+}
+
+/**
+ * CH06 - Header and Nav Styles
+**/
+
+#main-site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+#main-site-header h1 {
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+#main-site-header nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+#main-site-header nav ul li {
+  display: inline;
+}
+
+#main-site-header nav ul li a,
+#main-site-header nav ul li button {
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  float: left;
+  text-align: center;
+}
+
+#main-site-logo {
+  padding-left: 20px;
+}
+
+/**
+ * CH07 - Footer Styles
+**/
+
+#main-site-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#main-site-footer a {
+  text-decoration: none;
+}
+
+#main-site-footer address {
+  font-style: normal;
+}
+
+#main-site-footer small {
+  font-size: 14px;
+}
+
+#main-site-footer p {
+  margin: 0;
+  display: inline;
+}
+
+/**
+ * CH08 - Main Game Page
+**/
+
+#game-board {
+  margin: 2rem auto;
+  max-width: 40rem;
+  padding: 0.2rem;
+  box-shadow: 2px 4px 11px rgba(0, 0, 0, 0.5);
+}
+
+#inner-game {
+  padding: 3rem;
+}
+
+#game-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+#game-question p {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+#game-question button {
+  margin: 2px;
+  margin: 0;
+}
+
+#game-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+#game-info .element {
+  padding: 8px;
+}
+
+#game-info p {
+  margin: 0;
+  display: inline;
+}
+
+#random-choice #guess {
+  margin: 20px auto 0 auto;
+  padding: 5px;
+  text-align: center;
+  direction: rtl;
+  font-size: 55px;
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+#random-choice .font-name {
+  font-size: 11pt;
+  font-style: italic;
+  text-align: center;
+  padding: 0px 0px 6px 0px;
+}
+
+/**
+* CH09 - Setup Page
+**/
+
+#setup .groupboxes {
+  margin: 0;
+}
+
+#setup .layout {
+  display: grid;
+  grid-template-columns: 15.5em 15.5em;
+  grid-gap: 0.5em;
+  margin: 0 auto;
+  align-items: start;
+  width: 31.5em;
+  justify-items: left;
+}
+
+#setup .groupboxes > h3 {
+  margin-left: 8px;
+  text-align: left;
+}
+
+#setup .data {
+  grid-row: span 2;
+}
+
+/**
+* CH10 - Hebrew Alphabet Table Page
+**/
+
+#hebrew-alphabet table.alphabet-table {
+  border-collapse: collapse;
+}
+
+#hebrew-alphabet table.alphabet-table td,
+#hebrew-alphabet table.alphabet-table th {
+  width: 80px;
+  padding: 2px 5px;
+}
+
+#hebrew-alphabet table.alphabet-table th {
+  font-size: 18px;
+}
+
+#hebrew-alphabet .alphabet-table {
+  margin: 0 auto;
+}
+
+#hebrew-alphabet table.alphabet-table caption {
+  text-align: left;
+  font-size: smaller;
+  font-style: italic;
+}
+
+#hebrew-alphabet .nobreak {
+  white-space: nowrap;
+}
+
+/**
+* CH11 - High Scores Page
+**/
+
+#high-scores {
+  margin: 40px auto 0 auto;
+}
+
+#high-scores-table {
+  width: 500px;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
+#high-scores-table .top-row > th {
+  padding-top: 10px;
+}
+
+#high-scores-table .second-row > th {
+  padding-top: 15px;
+}
+
+#high-scores-table tr.top-row {
+  font-size: 25px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+#high-scores-table td,
+#high-scores-table th {
+  vertical-align: top;
+}
+
+#high-scores-table th {
+  padding-bottom: 10px;
+}
+
+#high-scores-table .rank-col {
+  width: 10px;
+  padding: 0px 2px;
+  text-align: left;
+}
+
+#high-scores-table .trophycol {
+  width: 10px;
+  padding: 0px 5px;
+}
+
+#high-scores-table .score-col {
+  width: 100px;
+  padding: 0px 50px 0px 5px;
+  text-align: right;
+}
+
+#high-scores-table .name-col {
+  width: 150px;
+  padding: 0px 5px;
+  text-align: left;
+}
+
+#high-scores-table tr.datarow > td {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#high-scores-table tr.datarow:last-child > td {
+  padding-bottom: 15px;
+}
+
+/**
+* CH12 - Media Queries
+**/
+
+@media screen and (min-width: 600px) {
+  body {
+    font-family: sans-serif;
+  }
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import './GameBoard.css'
 import columnInfoArray from '../../../data/columnInfo.json'
 
 const GameBoard = ({ gameDataUnique, randomDataColumn, clickLetterButton }) => {

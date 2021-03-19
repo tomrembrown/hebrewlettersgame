@@ -1,4 +1,4 @@
-import './GameModal.css'
+import React from 'react'
 
 const GameModal = ({ restartGameModal, isModalShown, title, children }) => {
   const showHideClassName = isModalShown ? 'display-block' : 'display-none'

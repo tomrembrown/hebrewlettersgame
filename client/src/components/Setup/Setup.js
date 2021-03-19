@@ -1,5 +1,4 @@
 import React from 'react'
-import './Setup.css'
 import ToggleInput from './ToggleInput'
 import columnInfoArray from '../../data/columnInfo.json'
 import ErrorModal from './ErrorModal/ErrorModal'

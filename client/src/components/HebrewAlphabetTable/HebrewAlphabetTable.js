@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './HebrewAlphabetTable.css'
 import hebrewAlphabetData from '../../data/hebrewAlphabet.json'
 import TableDataRow from './TableDataRow'
 import {

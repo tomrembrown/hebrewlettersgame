@@ -1,5 +1,4 @@
 import React from 'react'
-import './GameInfo.css'
 
 const Logo = ({ numCorrect, numWrong, gameScore }) => {
   const percentCorrect =

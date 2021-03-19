@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './HighScores.css'
 import HighScoresTables from './HighScoresTable'
 import { getScoreList } from '../../api/api-client'
 

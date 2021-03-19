@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './LoginModal.css'
 import { register, signin, checkHandleTaken } from '../../api/api-client'
 import {
   validateUserHandle,
@@ -239,7 +238,11 @@ class LoginModal extends Component {
           name="user_handle"
           id="user_handle"
         />
-        <div className={'error ' + (isUserHandleWrong ? 'visible' : 'hidden')}>
+        <div
+          className={
+            'error ' + (isUserHandleWrong ? 'display-block' : 'display-hidden')
+          }
+        >
           {userHandleErrorMessage}
         </div>
       </div>
@@ -259,7 +262,10 @@ class LoginModal extends Component {
           id="verify_password"
         />
         <div
-          className={'error ' + (isVerifyPasswordWrong ? 'visible' : 'hidden')}
+          className={
+            'error ' +
+            (isVerifyPasswordWrong ? 'display-block' : 'display-hidden')
+          }
         >
           {verifyPasswordErrorMessage}
         </div>
@@ -309,7 +315,10 @@ class LoginModal extends Component {
                     id="email"
                   />
                   <div
-                    className={'error ' + (isEmailWrong ? 'visible' : 'hidden')}
+                    className={
+                      'error ' +
+                      (isEmailWrong ? 'display-block' : 'display-none')
+                    }
                   >
                     {emailErrorMessage}
                   </div>
@@ -328,7 +337,8 @@ class LoginModal extends Component {
                   />
                   <div
                     className={
-                      'error ' + (isPasswordWrong ? 'visible' : 'hidden')
+                      'error ' +
+                      (isPasswordWrong ? 'display-block' : 'display-none')
                     }
                   >
                     {passwordErrorMessage}
@@ -339,7 +349,8 @@ class LoginModal extends Component {
               <div>
                 <div
                   className={
-                    'generalerror ' + (isGeneralError ? 'visible' : 'hidden')
+                    'generalerror ' +
+                    (isGeneralError ? 'display-block' : 'display-none')
                   }
                 >
                   {generalErrorMessage}

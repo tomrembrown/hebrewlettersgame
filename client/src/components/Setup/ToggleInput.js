@@ -1,5 +1,4 @@
 import React from 'react'
-import './ToggleInput.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faToggleOn, faToggleOff } from '@fortawesome/free-solid-svg-icons'
 

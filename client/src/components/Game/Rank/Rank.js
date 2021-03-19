@@ -1,5 +1,4 @@
 import React from 'react'
-import './Rank.css'
 
 const Rank = ({ user_score_rank, user_handle, user_high_score }) => {
   return (

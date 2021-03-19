@@ -1,5 +1,4 @@
 import React from 'react'
-import './GameControlButtons.css'
 
 const GameControlButtons = ({ restartGame }) => {
   return (
