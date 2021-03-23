@@ -31,10 +31,10 @@ const HighScoresTable = ({ highScores }) => {
           else if (score_rank === 3) trophycolor = ' bronzetrophy'
           return (
             <tr
-              className={'datarow ' + (score_rank === 1 ? 'first' : 'other')}
+              className={'data-row ' + (score_rank === 1 ? 'first' : 'other')}
               key={user_handle}
             >
-              <td className={'trophycol' + trophycolor}>
+              <td className={'trophy-col' + trophycolor}>
                 {displayTrophy ? <FontAwesomeIcon icon={faTrophy} /> : ''}
               </td>
               <td className="rank-col">

@@ -9,13 +9,13 @@ const GameModal = ({ restartGameModal, isModalShown, title, children }) => {
       id="game-modal"
       tabIndex="-1"
       role="dialog"
-      aria-labelledby="gameModalLabel"
+      aria-labelledby="game-modal-label"
       aria-hidden="true"
     >
       <div className="modal-background" onClick={restartGameModal}></div>
       <div className="modal-content shadow-5" role="document">
         <header>
-          <h3 className="modal-title" id="gameModalLabel">
+          <h3 className="modal-title" id="game-modal-label">
             {title}
           </h3>
           <button

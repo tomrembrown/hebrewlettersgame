@@ -586,7 +586,7 @@ main {
       color: d.$color-scores-table-other-row-text;
     }
 
-    &.datarow {
+    &.data-row {
       &:nth-child(even) {
         background-color: d.$color-scores-table-even-row-background;
       }
@@ -621,7 +621,7 @@ main {
     text-align: left;
   }
 
-  .trophycol {
+  .trophy-col {
     width: 10px;
     padding: 0px 5px;
   }

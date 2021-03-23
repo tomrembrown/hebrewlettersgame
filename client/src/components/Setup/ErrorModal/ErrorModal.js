@@ -9,13 +9,13 @@ const ErrorModal = ({ exitErrorModal, isErrorModalShown, children }) => {
       id="error-modal"
       tabIndex="-1"
       role="dialog"
-      aria-labelledby="errorModalLabel"
+      aria-labelledby="error-modal-label"
       aria-hidden="true"
     >
       <div className="modal-background" onClick={exitErrorModal}></div>
       <div className="modal-content shadow-5" role="document">
         <header>
-          <h3 className="modal-title" id="errorModalLabel">
+          <h3 className="modal-title" id="error-modal-label">
             Error in Setup
           </h3>
           <button

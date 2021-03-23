@@ -23,7 +23,7 @@ const RandomChoice = ({
           <div id="random-choice" className="modernCursiveHebrew">
             <img src={`../HebrewCursiveFont/${guess}.png`} alt={guess} />
           </div>
-          <p className="charactername">{columnInfo.display} Character</p>
+          <p className="character-name">{columnInfo.display} Character</p>
         </div>
       )
     } else if (columnInfo.isHTML) {
