@@ -31,7 +31,7 @@ const GameModal = ({ restartGameModal, isModalShown, title, children }) => {
         <footer>
           <button
             onClick={restartGameModal}
-            className="restart-button button-3d"
+            className="footer-button button-3d"
           >
             Restart Game
           </button>

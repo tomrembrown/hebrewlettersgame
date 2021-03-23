@@ -6,25 +6,24 @@
  * Contents of this file:
  *
  * CH01 - Fonts
- * CH02 - Colours and Borders
- * CH03 - Buttons and Toggles
- * CH04 - Modals
+ * CH02 - Buttons and Toggles
+ * CH03 - Modals
  * Overall Layout controls where header, footer, and main section of page is - and
- * overall dimensions of these. Where things are within these parts are in their
- * respective chpaters
- * CH05 - Overall Layout
- * CH06 - Header and Nav Styles
- * CH07 - Footer Styles
- * Anything covered in an above section - like fonts or colours/border - in one of the
- * pages is in the fonts/colors-borders sections - not the page section below
- * CH08 - Main Game Page
- * CH09 - Setup Page
- * CH10 - Hebrew Alphabet Table Page
- * CH11 - High Scores Page
- * CH12 - Media Queries
+ * overall dimensions of these. Layout inside of these elements is in respective sections
+ * CH04 - Overall Layout and General
+ * CH05 - Header and Nav Styles
+ * CH06 - Footer Styles
+ * Anything covered in an above section - like fonts - in one of the
+ * pages is in the fonts - not the page section below
+ * CH07 - Main Game Page
+ * CH08 - Setup Page
+ * CH09 - Hebrew Alphabet Table Page
+ * CH10 - High Scores Page
+ * CH11 - Media Queries
  * 
 **/
-@import './displaysettings';
+@use 'displaysettings' as d;
+@use 'mixins' as m;
 
 /**
  * CH01 - Fonts
@@ -65,41 +64,19 @@
   font-display: swap;
 }
 
-body {
-  font-family: Verdana, Arial, serif;
-  font-size: 100%;
-}
-
-#main-site-header h1 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-#main-site-header nav ul {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 .aramaicBiblicalSerif {
-  font-family: 'Tinos', serif;
-  direction: rtl;
-  font-size: 1.875rem;
-  width: auto;
-  height: 2.5rem;
+  font-family: d.$font-hebrew-serif;
+  @include m.hebrew-syntax;
 }
 
 .aramaicBiblicalSansSerif {
-  font-family: 'Open Sans Hebrew', sans-serif;
-  direction: rtl;
-  font-size: 1.875rem;
-  width: auto;
-  height: 2.5rem;
+  font-family: d.$font-hebrew-sans-serif;
+  @include m.hebrew-syntax;
 }
 
 .paleoHebrew {
-  font-family: Arial;
-  direction: rtl;
-  font-size: 1.875rem;
-  width: auto;
-  height: 2.5rem;
+  font-family: d.$font-hebrew-paleo;
+  @include m.hebrew-syntax;
 }
 
 .modernCursive > img {
@@ -107,154 +84,14 @@ body {
 }
 
 .transliteration {
-  font-family: 'Tinos', serif;
-  font-size: 2rem;
+  font: {
+    family: d.$font-hebrew-serif;
+    size: 2rem;
+  }
 }
 
 /**
- * CH02 - Colours, Borders, and Text Shadows
-**/
-body {
-  background-color: white;
-}
-
-#main-site-footer {
-  background: #343a40;
-  color: #686868;
-}
-
-#main-site-footer a {
-  color: #dbe7f0;
-}
-
-#game-modal .modal-content {
-  border-radius: 4px;
-  background-color: #ffffff;
-}
-
-#game-modal header {
-  color: #ffffff;
-  background-color: #800000;
-}
-
-#game-modal .close {
-  color: white;
-}
-
-#game-modal footer {
-  border-top: solid 1px #cccccc;
-  background-color: #fafafa;
-}
-
-#main-site-header {
-  background: #3d3331;
-}
-
-#main-site-header h1 {
-  color: #c59888;
-  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
-    0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424;
-}
-
-#main-site-header nav ul li a,
-#main-site-header nav ul li button {
-  background: #5f3222;
-  color: #eee;
-  border-top: 2px solid #815444;
-  border-right: 2px solid #3d1000;
-  border-bottom: 2px solid #3d1000;
-  border-left: 2px solid #815444;
-}
-
-#main-site-header nav ul li a:hover,
-#main-site-header nav ul li button:hover,
-#main-site-header nav ul li a.active,
-#main-site-header nav ul li button.active {
-  background: #a37666;
-  color: #000;
-  border-top: 2px solid #815444;
-  border-right: 2px solid #c59888;
-  border-bottom: 2px solid #c59888;
-  border-left: 2px solid #815444;
-}
-
-#game-board {
-  background-color: #f4f5e2;
-  border: 1px solid #3d3331;
-  border-radius: 6px;
-}
-
-#game-question button:hover {
-  background-color: #f8dfdf;
-}
-
-#random-choice #guess {
-  border: 1px solid #3d3331;
-  color: maroon;
-  border-radius: 6px;
-}
-
-#random-choice .font-name {
-  color: #444;
-}
-
-#hebrew-alphabet table.alphabet-table {
-  border: 2px solid #333;
-}
-
-#hebrew-alphabet table.alphabet-table td,
-#hebrew-alphabet table.alphabet-table th {
-  border: 1px solid #777;
-}
-
-#hebrew-alphabet table.alphabet-table thead {
-  border: 2px solid #333;
-}
-
-#high-scores-table {
-  border: 5px solid darkcyan;
-}
-
-#high-scores-table tr.top-row {
-  background-color: #777;
-  color: white;
-}
-
-#high-scores-table .second-row {
-  background-color: #555;
-  color: #ccc;
-}
-
-#high-scores-table tr.datarow:nth-child(even) {
-  background-color: #555;
-}
-
-#high-scores-table tr.datarow:nth-child(odd) {
-  background-color: #333;
-}
-
-#high-scores-table tr.first {
-  color: limegreen;
-}
-
-#high-scores-table tr.other {
-  color: white;
-}
-
-#high-scores-table .goldtrophy {
-  color: #ffd700;
-}
-
-#high-scores-table .silvertrophy {
-  color: #c0c0c0;
-}
-
-#high-scores-table .bronzetrophy {
-  color: #cd7f32;
-}
-
-/**
- * CH03 - Buttons and Toggles
+ * CH02 - Buttons and Toggles
 **/
 button {
   cursor: pointer;
@@ -271,32 +108,34 @@ button {
   );
 }
 
-.toggle-input label button {
-  width: 23px;
-  height: 23px;
-  display: inline-block;
-  text-align: center;
-  line-height: 20px;
-  margin-right: 6px;
-  border-radius: 3px;
-  border: none;
-  background-color: white;
-}
-
 .toggle-input {
   padding: 4px 0px;
   text-align: left;
-}
 
-.toggle-input label svg {
-  font-size: 18px;
-  color: black;
-  margin-left: -4px;
-  padding-top: 2px;
+  label {
+    button {
+      width: 23px;
+      height: 23px;
+      display: inline-block;
+      text-align: center;
+      line-height: 20px;
+      margin-right: 6px;
+      border-radius: 3px;
+      border: none;
+      background-color: white;
+    }
+
+    svg {
+      font-size: 18px;
+      color: black;
+      margin-left: -4px;
+      padding-top: 2px;
+    }
+  }
 }
 
 /**
- * CH04 - Modals
+ * CH03 - Modals
 **/
 .display-block {
   display: block;
@@ -306,214 +145,134 @@ button {
   display: none;
 }
 
-#game-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  padding-top: 2%;
+#game-modal,
+#error-modal {
+  @include m.modal-setup;
   z-index: 2000;
-}
 
-#game-modal .modal-content {
-  width: 95vw;
-  max-width: 300px;
-  height: 90vh;
-  max-height: 300px;
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
+  .modal-content {
+    width: 95vw;
+    max-width: 300px;
+    height: 90vh;
+    max-height: 300px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 4px;
+    background-color: d.$color-game-modal-background;
+  }
 
-#game-modal header {
-  display: grid;
-  padding-left: 14px;
-  grid-template-columns: auto 60px;
-  height: 40px;
-}
+  header {
+    display: grid;
+    padding-left: 14px;
+    grid-template-columns: auto 60px;
+    height: 40px;
+    color: d.$color-game-modal-header-text;
+    background-color: d.$color-game-modal-header-background;
+  }
 
-#game-modal h3 {
-  margin: 0;
-  text-align: left;
-  font-weight: 600;
-  font-size: 18px;
-}
+  h3 {
+    margin: 0;
+    text-align: left;
+    font-weight: 600;
+    font-size: 18px;
+  }
 
-#game-modal .close {
-  border: none;
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  background: transparent;
-  font-size: 24px;
-  padding: 10px;
-  margin-top: -14px;
-  margin-left: 14px;
-}
+  .close {
+    @include m.close-button;
+    height: 100%;
+    width: 100%;
+    font-size: 24px;
+    padding: 10px;
+    margin-top: -14px;
+    margin-left: 14px;
+    color: d.$color-game-modal-close-button;
+  }
 
-#game-modal .restart-button {
-  padding: 8px 16px;
-}
+  .footer-button {
+    padding: 8px 16px;
+  }
 
-#game-modal .modal-main {
-  flex: 1;
-  text-align: center;
-  overflow: auto;
-  padding: 14px;
-}
+  .modal-main {
+    flex: 1;
+    text-align: center;
+    overflow: auto;
+    padding: 14px;
+  }
 
-#game-modal footer {
-  height: auto;
-  padding: 14px;
+  footer {
+    height: auto;
+    padding: 14px;
+    border-top: solid 1px d.$color-game-modal-footer-border;
+    background-color: d.$color-game-modal-footer-background;
+  }
 }
 
 #login-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  padding-top: 2%;
-  z-index: 2000;
+  @include m.modal-setup;
   text-align: center;
-}
 
-#login-modal .background-white {
-  background-color: white;
-}
+  .background-white {
+    background-color: white;
+  }
 
-#login-modal header {
-  background-color: white;
-  display: grid;
-  padding-left: 14px;
-  align-items: center;
-  grid-template-columns: auto 60px;
-}
+  header {
+    background-color: white;
+    display: grid;
+    padding-left: 14px;
+    align-items: center;
+    grid-template-columns: auto 60px;
+  }
 
-#login-modal div.error {
-  color: red;
-  font-style: italic;
-  font-size: small;
-  text-align: left;
-}
+  div {
+    &.error {
+      color: red;
+      font-style: italic;
+      font-size: small;
+      text-align: left;
+    }
 
-#login-modal div.generalerror {
-  color: red;
-  text-align: center;
-  font-style: italic;
-  font-size: smaller;
-  margin-top: -8px;
-  margin-bottom: 10px;
-}
+    &.generalerror {
+      color: red;
+      text-align: center;
+      font-style: italic;
+      font-size: smaller;
+      margin-top: -8px;
+      margin-bottom: 10px;
+    }
+  }
+  article {
+    min-width: 375px;
+  }
 
-#login-modal article {
-  min-width: 375px;
-}
+  h3 {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+  }
 
-#login-modal h3 {
-  text-align: left;
-  font-size: 16px;
-  font-weight: 500;
-  margin: 0;
-}
-
-#login-modal button.close {
-  color: black;
-  font-weight: 800;
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  margin-left: 16px;
-}
-
-#error-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  padding-top: 2%;
-  z-index: 2000;
-}
-
-#error-modal .modal-content {
-  width: 95vw;
-  max-width: 300px;
-  height: 90vh;
-  max-height: 300px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-#error-modal header {
-  color: #ffffff;
-  background-color: #800000;
-  display: grid;
-  padding-left: 14px;
-  align-items: center;
-  grid-template-columns: auto 60px;
-  height: 45px;
-}
-
-#error-modal h3 {
-  margin: 0;
-  text-align: left;
-  font-weight: 600;
-  font-size: 18px;
-}
-
-#error-modal .close {
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  background: transparent;
-  color: white;
-  font-size: 24px;
-  padding: 10px;
-  margin-top: -14px;
-  margin-left: 14px;
-}
-
-#error-modal .ok-button {
-  padding: 8px 16px;
-}
-
-#error-modal .modal-main {
-  flex: 1;
-  text-align: center;
-  overflow: auto;
-  padding: 14px;
-}
-
-#error-modal footer {
-  height: auto;
-  text-align: right;
-  border-top: solid 1px #cccccc;
-  padding: 14px;
-  background-color: #fafafa;
-  display: flex;
-  justify-content: space-between;
+  .close {
+    @include m.close-button;
+    color: black;
+    font-weight: 800;
+    font-size: 24px;
+    margin-left: 16px;
+  }
 }
 
 /**
- * CH05 - Overall Layout
+ * CH04 - Overall Layout and General
 **/
+body {
+  background-color: d.$color-main-body-background;
+  font-family: d.$font-body-mobile;
+  font-size: 100%;
+}
+
 main {
   padding-bottom: 3.75rem;
 }
@@ -528,7 +287,7 @@ main {
 }
 
 /**
- * CH06 - Header and Nav Styles
+ * CH05 - Header and Nav Styles
 **/
 
 #main-site-header {
@@ -536,35 +295,72 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-}
+  background: d.$color-main-header-background;
 
-#main-site-header h1 {
-  font-size: 18px;
-  font-weight: lighter;
-}
+  h1 {
+    font: {
+      size: 18px;
+      weight: lighter;
+      family: d.$font-header-nav;
+    }
+    color: d.$color-main-header-title-text;
+    text-shadow: 0 -1px 0 d.$color-main-header-title-shadow-1,
+      0 1px 0 d.$color-main-header-title-shadow-2,
+      0 2px 0 d.$color-main-header-title-shadow-3,
+      0 3px 0 d.$color-main-header-title-shadow-4,
+      0 4px 0 d.$color-main-header-title-shadow-5,
+      0 5px 0 d.$color-main-header-title-shadow-6,
+      0 6px 0 d.$color-main-header-title-shadow-7;
+  }
 
-#main-site-header nav ul {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 14px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  overflow: auto;
-}
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    font-family: d.$font-header-nav;
 
-#main-site-header nav ul li {
-  display: inline;
-}
+    li {
+      display: inline;
 
-#main-site-header nav ul li a,
-#main-site-header nav ul li button {
-  text-decoration: none;
-  display: block;
-  padding: 5px 10px;
-  float: left;
-  text-align: center;
+      a,
+      button {
+        text-decoration: none;
+        display: block;
+        padding: 5px 10px;
+        float: left;
+        text-align: center;
+        background: d.$color-main-nav-button-background;
+        color: d.$color-main-nav-button-text;
+        border-top: 2px solid d.$color-main-nav-button-border-top-and-left;
+        border-right: 2px solid d.$color-main-nav-button-border-right-and-bottom;
+        border-bottom: 2px solid
+          d.$color-main-nav-button-border-right-and-bottom;
+        border-left: 2px solid d.$color-main-nav-button-border-top-and-left;
+      }
+
+      a,
+      button {
+        &:hover,
+        &.active {
+          background: d.$color-main-nav-button-active-background;
+          color: d.$color-main-nav-button-active-text;
+          border-top: 2px solid
+            d.$color-main-nav-button-active-border-top-and-left;
+          border-right: 2px solid
+            d.$color-main-nav-button-active-border-right-and-bottom;
+          border-bottom: 2px solid
+            d.$color-main-nav-button-active-border-right-and-bottom;
+          border-left: 2px solid
+            d.$color-main-nav-button-active-border-top-and-left;
+        }
+      }
+    }
+  }
 }
 
 #main-site-logo {
@@ -572,33 +368,36 @@ main {
 }
 
 /**
- * CH07 - Footer Styles
+ * CH06 - Footer Styles
 **/
 
 #main-site-footer {
   display: flex;
   justify-content: space-between;
-}
+  background: d.$color-main-footer-background;
+  color: d.$color-main-footer-text;
 
-#main-site-footer a {
-  text-decoration: none;
-}
+  a {
+    text-decoration: none;
+    color: d.$color-main-footer-anchor;
+  }
 
-#main-site-footer address {
-  font-style: normal;
-}
+  address {
+    font-style: normal;
+  }
 
-#main-site-footer small {
-  font-size: 14px;
-}
+  small {
+    font-size: 14px;
+  }
 
-#main-site-footer p {
-  margin: 0;
-  display: inline;
+  p {
+    margin: 0;
+    display: inline;
+  }
 }
 
 /**
- * CH08 - Main Game Page
+ * CH07 - Main Game Page
 **/
 
 #game-board {
@@ -606,6 +405,9 @@ main {
   max-width: 40rem;
   padding: 0.2rem;
   box-shadow: 2px 4px 11px rgba(0, 0, 0, 0.5);
+  background-color: d.$color-game-board-background;
+  border: 1px solid d.$color-game-board-border;
+  border-radius: 6px;
 }
 
 #inner-game {
@@ -617,110 +419,131 @@ main {
   justify-content: space-between;
 }
 
-#game-question p {
-  margin-top: 25px;
-  margin-bottom: 10px;
-  text-align: left;
-}
+#game-question {
+  p {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
 
-#game-question button {
-  margin: 2px;
-  margin: 0;
+  button {
+    margin: 2px;
+    margin: 0;
+
+    &:hover {
+      background-color: d.$color-button-game-hover;
+    }
+  }
 }
 
 #game-info {
   display: flex;
   justify-content: space-between;
+
+  .element {
+    padding: 8px;
+  }
+
+  p {
+    margin: 0;
+    display: inline;
+  }
 }
 
-#game-info .element {
-  padding: 8px;
-}
+#random-choice {
+  #guess {
+    margin: 20px auto 0 auto;
+    padding: 5px;
+    text-align: center;
+    direction: rtl;
+    font-size: 55px;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border: 1px solid d.$color-game-question-character-border;
+    color: d.$color-game-question-character;
+    border-radius: 6px;
+  }
 
-#game-info p {
-  margin: 0;
-  display: inline;
-}
-
-#random-choice #guess {
-  margin: 20px auto 0 auto;
-  padding: 5px;
-  text-align: center;
-  direction: rtl;
-  font-size: 55px;
-  width: 80px;
-  height: 80px;
-  position: relative;
-}
-
-#random-choice .font-name {
-  font-size: 11pt;
-  font-style: italic;
-  text-align: center;
-  padding: 0px 0px 6px 0px;
+  .font-name {
+    font-size: 11pt;
+    font-style: italic;
+    text-align: center;
+    padding: 0px 0px 6px 0px;
+    color: d.$color-game-question-font-name;
+  }
 }
 
 /**
-* CH09 - Setup Page
+* CH08 - Setup Page
 **/
 
-#setup .groupboxes {
-  margin: 0;
-}
+#setup {
+  .groupboxes {
+    margin: 0;
 
-#setup .layout {
-  display: grid;
-  grid-template-columns: 15.5em 15.5em;
-  grid-gap: 0.5em;
-  margin: 0 auto;
-  align-items: start;
-  width: 31.5em;
-  justify-items: left;
-}
+    > h3 {
+      margin-left: 8px;
+      text-align: left;
+    }
+  }
 
-#setup .groupboxes > h3 {
-  margin-left: 8px;
-  text-align: left;
-}
+  .layout {
+    display: grid;
+    grid-template-columns: 15.5em 15.5em;
+    grid-gap: 0.5em;
+    margin: 0 auto;
+    align-items: start;
+    width: 31.5em;
+    justify-items: left;
+  }
 
-#setup .data {
-  grid-row: span 2;
+  .data {
+    grid-row: span 2;
+  }
 }
 
 /**
-* CH10 - Hebrew Alphabet Table Page
+* CH09 - Hebrew Alphabet Table Page
 **/
 
-#hebrew-alphabet table.alphabet-table {
-  border-collapse: collapse;
-}
+#hebrew-alphabet {
+  .nobreak {
+    white-space: nowrap;
+  }
 
-#hebrew-alphabet table.alphabet-table td,
-#hebrew-alphabet table.alphabet-table th {
-  width: 80px;
-  padding: 2px 5px;
-}
+  table.alphabet-table {
+    border-collapse: collapse;
+    border: 2px solid d.$color-alphabet-table-border-main;
+    margin: 0 auto;
 
-#hebrew-alphabet table.alphabet-table th {
-  font-size: 18px;
-}
+    td,
+    th {
+      width: 80px;
+      padding: 2px 5px;
+      border: 1px solid d.$color-alphabet-table-border-cell;
+    }
 
-#hebrew-alphabet .alphabet-table {
-  margin: 0 auto;
-}
+    th {
+      font-size: 18px;
+    }
 
-#hebrew-alphabet table.alphabet-table caption {
-  text-align: left;
-  font-size: smaller;
-  font-style: italic;
-}
+    thead {
+      border: 2px solid d.$color-alphabet-table-border-header;
+    }
 
-#hebrew-alphabet .nobreak {
-  white-space: nowrap;
+    caption {
+      text-align: left;
+      font: {
+        size: smaller;
+        style: italic;
+      }
+    }
+  }
 }
 
 /**
-* CH11 - High Scores Page
+* CH10 - High Scores Page
 **/
 
 #high-scores {
@@ -729,75 +552,111 @@ main {
 
 #high-scores-table {
   width: 500px;
-  align-items: center;
-  text-align: center;
   margin: 0 auto;
   border-collapse: collapse;
   margin-bottom: 30px;
   padding-bottom: 30px;
-}
+  border: 5px solid d.$color-scores-table-border;
 
-#high-scores-table .top-row > th {
-  padding-top: 10px;
-}
+  .top-row {
+    font-size: 25px;
+    letter-spacing: 2px;
+    background-color: d.$color-scores-table-top-row-background;
+    color: d.$color-scores-table-top-row-text;
 
-#high-scores-table .second-row > th {
-  padding-top: 15px;
-}
+    th {
+      padding-top: 10px;
+    }
+  }
 
-#high-scores-table tr.top-row {
-  font-size: 25px;
-  text-align: center;
-  letter-spacing: 2px;
-}
+  .second-row {
+    background-color: d.$color-scores-table-heading-row-background;
+    color: d.$color-scores-table-heading-row-text;
 
-#high-scores-table td,
-#high-scores-table th {
-  vertical-align: top;
-}
+    th {
+      padding-top: 15px;
+    }
+  }
 
-#high-scores-table th {
-  padding-bottom: 10px;
-}
+  tr {
+    &.first {
+      color: d.$color-scores-table-first-row-text;
+    }
 
-#high-scores-table .rank-col {
-  width: 10px;
-  padding: 0px 2px;
-  text-align: left;
-}
+    &.other {
+      color: d.$color-scores-table-other-row-text;
+    }
 
-#high-scores-table .trophycol {
-  width: 10px;
-  padding: 0px 5px;
-}
+    &.datarow {
+      &:nth-child(even) {
+        background-color: d.$color-scores-table-even-row-background;
+      }
 
-#high-scores-table .score-col {
-  width: 100px;
-  padding: 0px 50px 0px 5px;
-  text-align: right;
-}
+      &:nth-child(odd) {
+        background-color: d.$color-scores-table-odd-row-background;
+      }
 
-#high-scores-table .name-col {
-  width: 150px;
-  padding: 0px 5px;
-  text-align: left;
-}
+      > td {
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
 
-#high-scores-table tr.datarow > td {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
+      &:last-child > td {
+        padding-bottom: 15px;
+      }
+    }
+  }
 
-#high-scores-table tr.datarow:last-child > td {
-  padding-bottom: 15px;
+  td,
+  th {
+    vertical-align: top;
+  }
+
+  th {
+    padding-bottom: 10px;
+  }
+
+  .rank-col {
+    width: 10px;
+    padding: 0px 2px;
+    text-align: left;
+  }
+
+  .trophycol {
+    width: 10px;
+    padding: 0px 5px;
+  }
+  .score-col {
+    width: 100px;
+    padding: 0px 50px 0px 5px;
+    text-align: right;
+  }
+
+  .name-col {
+    width: 150px;
+    padding: 0px 5px;
+    text-align: left;
+  }
+
+  .goldtrophy {
+    color: d.$color-scores-trophy-gold;
+  }
+
+  .silvertrophy {
+    color: d.$color-scores-trophy-silver;
+  }
+
+  .bronzetrophy {
+    color: d.$color-scores-trophy-bronze;
+  }
 }
 
 /**
-* CH12 - Media Queries
+* CH11 - Media Queries
 **/
 
 @media screen and (min-width: 600px) {
   body {
-    font-family: sans-serif;
+    font-family: d.$font-body-desktop;
   }
 }

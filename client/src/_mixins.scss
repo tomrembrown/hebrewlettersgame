@@ -1,0 +1,22 @@
+@mixin hebrew-syntax {
+  font-size: 1.875rem;
+  direction: rtl;
+  width: auto;
+  height: 2.5rem;
+}
+
+@mixin modal-setup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 2%;
+}
+
+@mixin close-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}

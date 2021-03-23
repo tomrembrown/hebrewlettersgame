@@ -1,3 +1,5 @@
+/* Colors from palleton */
+
 $color-primary-0: #6d288d; // Main Primary color */
 $color-primary-1: #9f68b9;
 $color-primary-2: #7f419d;
@@ -15,3 +17,76 @@ $color-secondary-2-1: #8570bd;
 $color-secondary-2-2: #6049a2;
 $color-secondary-2-3: #351d79;
 $color-secondary-2-4: #220c5e;
+
+/* Fonts */
+$font-body-mobile: Verdana, Arial, serif;
+$font-body-desktop: sans-serif;
+$font-header-nav: Verdana, Geneva, Tahoma, sans-serif;
+$font-hebrew-serif: 'Tinos', serif;
+$font-hebrew-sans-serif: 'Open Sans Hebrew', sans-serif;
+$font-hebrew-paleo: Arial;
+
+/* Colors - originally */
+// Main site header & nav
+$color-main-header-background: #3d3331;
+$color-main-header-title-text: #c59888;
+$color-main-header-title-shadow-1: #fff;
+$color-main-header-title-shadow-2: #2e2e2e;
+$color-main-header-title-shadow-3: #2c2c2c;
+$color-main-header-title-shadow-4: #2a2a2a;
+$color-main-header-title-shadow-5: #282828;
+$color-main-header-title-shadow-6: #262626;
+$color-main-header-title-shadow-7: #242424;
+$color-main-nav-button-background: #5f3222;
+$color-main-nav-button-text: #eee;
+$color-main-nav-button-border-top-and-left: #815444;
+$color-main-nav-button-border-right-and-bottom: #3d1000;
+$color-main-nav-button-active-background: #a37666;
+$color-main-nav-button-active-text: #000;
+$color-main-nav-button-active-border-top-and-left: #815444;
+$color-main-nav-button-active-border-right-and-bottom: #c59888;
+
+// Main site background (the background that doesn't change when different pages loaded)
+$color-main-body-background: white;
+
+// Main site footer
+$color-main-footer-background: #343a40;
+$color-main-footer-text: #686868;
+$color-main-footer-anchor: #dbe7f0;
+
+// Game Tab Colors
+$color-game-board-background: #f4f5e2;
+$color-game-board-border: #3d3331;
+$color-game-question-character: maroon;
+$color-game-question-character-border: #3d3331;
+$color-game-question-font-name: #444;
+
+// Hebrew Alphabet Tab Colors
+$color-alphabet-table-border-main: #333;
+$color-alphabet-table-border-cell: #777;
+$color-alphabet-table-border-header: #333;
+
+// High Scores Tab Colors
+$color-scores-table-border: darkcyan;
+$color-scores-table-top-row-background: #777;
+$color-scores-table-top-row-text: white;
+$color-scores-table-heading-row-background: #555;
+$color-scores-table-heading-row-text: #ccc;
+$color-scores-table-even-row-background: #555;
+$color-scores-table-odd-row-background: #333;
+$color-scores-table-first-row-text: limegreen;
+$color-scores-table-other-row-text: white;
+$color-scores-trophy-gold: #ffd700;
+$color-scores-trophy-silver: #c0c0c0;
+$color-scores-trophy-bronze: #cd7f32;
+
+// Game Modal that pops up when game finished colors
+$color-game-modal-background: white;
+$color-game-modal-header-text: white;
+$color-game-modal-header-background: #800000;
+$color-game-modal-close-button: white;
+$color-game-modal-footer-border: #cccccc;
+$color-game-modal-footer-background: #fafafa;
+
+// Button Colors
+$color-button-game-hover: #f8dfdf;
