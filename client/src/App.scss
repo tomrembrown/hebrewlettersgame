@@ -109,27 +109,27 @@ button {
 }
 
 .toggle-input {
-  padding: 4px 0px;
+  padding: 0.25rem 0px;
   text-align: left;
 
   label {
     button {
-      width: 23px;
-      height: 23px;
+      width: 1.45rem;
+      height: 1.45rem;
       display: inline-block;
       text-align: center;
-      line-height: 20px;
-      margin-right: 6px;
-      border-radius: 3px;
+      line-height: 1.25rem;
+      margin-right: 0.375rem;
+      border-radius: 0.19rem;
       border: none;
       background-color: white;
     }
 
     svg {
-      font-size: 18px;
+      font-size: 1.125rem;
       color: black;
-      margin-left: -4px;
-      padding-top: 2px;
+      margin-left: -0.25rem;
+      padding-top: 0.125rem;
     }
   }
 }
@@ -152,9 +152,9 @@ button {
 
   .modal-content {
     width: 95vw;
-    max-width: 300px;
+    max-width: 18.75rem;
     height: 90vh;
-    max-height: 300px;
+    max-height: 18.75rem;
     position: relative;
     overflow: hidden;
     margin: 0 auto;
@@ -167,9 +167,9 @@ button {
 
   header {
     display: grid;
-    padding-left: 14px;
-    grid-template-columns: auto 60px;
-    height: 40px;
+    padding-left: 0.875rem;
+    grid-template-columns: auto 3.75rem;
+    height: 2.5rem;
     color: d.$color-game-modal-header-text;
     background-color: d.$color-game-modal-header-background;
   }
@@ -178,34 +178,34 @@ button {
     margin: 0;
     text-align: left;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 
   .close {
     @include m.close-button;
     height: 100%;
     width: 100%;
-    font-size: 24px;
-    padding: 10px;
-    margin-top: -14px;
-    margin-left: 14px;
+    font-size: 1.5rem;
+    padding: 0.625rem;
+    margin-top: -0.875rem;
+    margin-left: 0.875rem;
     color: d.$color-game-modal-close-button;
   }
 
   .footer-button {
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
   }
 
   .modal-main {
     flex: 1;
     text-align: center;
     overflow: auto;
-    padding: 14px;
+    padding: 0.875rem;
   }
 
   footer {
     height: auto;
-    padding: 14px;
+    padding: 0.875rem;
     border-top: solid 1px d.$color-game-modal-footer-border;
     background-color: d.$color-game-modal-footer-background;
   }
@@ -222,9 +222,9 @@ button {
   header {
     background-color: white;
     display: grid;
-    padding-left: 14px;
+    padding-left: 0.875rem;
     align-items: center;
-    grid-template-columns: auto 60px;
+    grid-template-columns: auto 3.75rem;
   }
 
   div {
@@ -240,17 +240,17 @@ button {
       text-align: center;
       font-style: italic;
       font-size: smaller;
-      margin-top: -8px;
-      margin-bottom: 10px;
+      margin-top: -0.5rem;
+      margin-bottom: 0.625rem;
     }
   }
   article {
-    min-width: 375px;
+    min-width: 2rem;
   }
 
   h3 {
     text-align: left;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
     margin: 0;
   }
@@ -259,8 +259,8 @@ button {
     @include m.close-button;
     color: black;
     font-weight: 800;
-    font-size: 24px;
-    margin-left: 16px;
+    font-size: 1.5rem;
+    margin-left: 1rem;
   }
 }
 
@@ -280,8 +280,8 @@ main {
 #main-site-footer {
   position: fixed;
   width: 100%;
-  bottom: 0;
   left: 0;
+  bottom: 0;
   padding: 0.9375rem 1.5625rem;
   height: 3.125rem;
 }
@@ -294,15 +294,21 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 0.625rem;
   background: d.$color-main-header-background;
+  width: 100%;
+
+  #branding {
+    display: flex;
+  }
 
   h1 {
     font: {
-      size: 18px;
+      size: 1.125rem;
       weight: lighter;
       family: d.$font-header-nav;
     }
+    margin-left: 1rem;
     color: d.$color-main-header-title-text;
     text-shadow: 0 -1px 0 d.$color-main-header-title-shadow-1,
       0 1px 0 d.$color-main-header-title-shadow-2,
@@ -317,7 +323,7 @@ main {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-size: 14px;
+    font-size: 0.875rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -331,7 +337,7 @@ main {
       button {
         text-decoration: none;
         display: block;
-        padding: 5px 10px;
+        padding: 0.3125rem 0.625rem;
         float: left;
         text-align: center;
         background: d.$color-main-nav-button-background;
@@ -364,7 +370,7 @@ main {
 }
 
 #main-site-logo {
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 
 /**
@@ -387,7 +393,7 @@ main {
   }
 
   small {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   p {
@@ -421,17 +427,22 @@ main {
 
 #game-question {
   p {
-    margin-top: 25px;
-    margin-bottom: 10px;
+    margin-top: 1.5rem;
+    margin-bottom: 0.625rem;
     text-align: left;
   }
 
-  button {
-    margin: 2px;
-    margin: 0;
+  #game-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-    &:hover {
-      background-color: d.$color-button-game-hover;
+    button {
+      margin: 0.1rem 0.2rem;
+
+      &:hover {
+        background-color: d.$color-button-game-hover;
+      }
     }
   }
 }
@@ -441,7 +452,7 @@ main {
   justify-content: space-between;
 
   .element {
-    padding: 8px;
+    padding: 0.5rem;
   }
 
   p {
@@ -452,23 +463,23 @@ main {
 
 #random-choice {
   #guess {
-    margin: 20px auto 0 auto;
-    padding: 5px;
+    margin: 1.25rem auto 0 auto;
+    padding: 0.3125rem;
     text-align: center;
     direction: rtl;
-    font-size: 55px;
-    width: 80px;
-    height: 80px;
+    font-size: 3.5rem;
+    width: 5rem;
+    height: 5rem;
     border: 1px solid d.$color-game-question-character-border;
     color: d.$color-game-question-character;
     border-radius: 6px;
   }
 
   .font-name {
-    font-size: 11pt;
+    font-size: 0.875rem;
     font-style: italic;
     text-align: center;
-    padding: 0px 0px 6px 0px;
+    padding: 0 0 0.375rem;
     color: d.$color-game-question-font-name;
   }
 }
@@ -482,18 +493,18 @@ main {
     margin: 0;
 
     > h3 {
-      margin-left: 8px;
+      margin-left: 0.5rem;
       text-align: left;
     }
   }
 
   .layout {
     display: grid;
-    grid-template-columns: 15.5em 15.5em;
-    grid-gap: 0.5em;
+    grid-template-columns: 15.5rem 15.5rem;
+    grid-gap: 0.5rem;
     margin: 0 auto;
     align-items: start;
-    width: 31.5em;
+    width: 31.5rem;
     justify-items: left;
   }
 
@@ -518,13 +529,13 @@ main {
 
     td,
     th {
-      width: 80px;
-      padding: 2px 5px;
+      width: 5rem;
+      padding: 0.125rem 0.3125rem;
       border: 1px solid d.$color-alphabet-table-border-cell;
     }
 
     th {
-      font-size: 18px;
+      font-size: 1.125rem;
     }
 
     thead {
@@ -546,25 +557,25 @@ main {
 **/
 
 #high-scores {
-  margin: 40px auto 0 auto;
+  margin: 2.5rem auto 0 auto;
 }
 
 #high-scores-table {
-  width: 500px;
+  width: 30rem;
   margin: 0 auto;
   border-collapse: collapse;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-  border: 5px solid d.$color-scores-table-border;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border: 0.3125rem solid d.$color-scores-table-border;
 
   .top-row {
-    font-size: 25px;
-    letter-spacing: 2px;
+    font-size: 1.5rem;
+    letter-spacing: 0.125rem;
     background-color: d.$color-scores-table-top-row-background;
     color: d.$color-scores-table-top-row-text;
 
     th {
-      padding-top: 10px;
+      padding-top: 0.625rem;
     }
   }
 
@@ -573,7 +584,7 @@ main {
     color: d.$color-scores-table-heading-row-text;
 
     th {
-      padding-top: 15px;
+      padding-top: 1rem;
     }
   }
 
@@ -596,12 +607,12 @@ main {
       }
 
       > td {
-        padding-top: 4px;
-        padding-bottom: 4px;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
       }
 
       &:last-child > td {
-        padding-bottom: 15px;
+        padding-bottom: 1rem;
       }
     }
   }
@@ -612,28 +623,28 @@ main {
   }
 
   th {
-    padding-bottom: 10px;
+    padding-bottom: 0.625rem;
   }
 
   .rank-col {
-    width: 10px;
-    padding: 0px 2px;
+    width: 0.625rem;
+    padding: 0px 0.125rem;
     text-align: left;
   }
 
   .trophy-col {
-    width: 10px;
-    padding: 0px 5px;
+    width: 0.625rem;
+    padding: 0 0.3125rem;
   }
   .score-col {
-    width: 100px;
-    padding: 0px 50px 0px 5px;
+    width: 6.25rem;
+    padding: 0 3.125rem 0 0.3125rem;
     text-align: right;
   }
 
   .name-col {
-    width: 150px;
-    padding: 0px 5px;
+    width: 10rem;
+    padding: 0px 0.3125rem;
     text-align: left;
   }
 

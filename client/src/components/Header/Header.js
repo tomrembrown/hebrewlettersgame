@@ -12,8 +12,10 @@ const Header = ({
 }) => {
   return (
     <header id="main-site-header">
-      <Logo />
-      <h1>Hebrew Alphabet Game</h1>
+      <span id="branding">
+        <Logo />
+        <h1>Hebrew Alphabet Game</h1>
+      </span>
       <Navigation
         isSignedIn={isSignedIn}
         showSigninModal={showSigninModal}
