@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Header from './components/Header/Header'
+import './App.scss'
+import Footer from './components/Footer/Footer'
 import Game from './components/Game/Game'
-import Setup from './components/Setup/Setup'
+import Header from './components/Header/Header'
 import HebrewAlphabetTable from './components/HebrewAlphabetTable/HebrewAlphabetTable'
 import HighScores from './components/HighScores/HighScores'
 import LoginModal from './components/LoginModal/LoginModal'
-import columnInfoArray from './data/columnInfo.json'
-import Footer from './components/Footer/Footer'
 import PageNotFound from './components/PageNotFound/PageNotFound'
-import './App.scss'
+import Setup from './components/Setup/Setup'
+import columnInfoArray from './data/columnInfo.json'
 
 class App extends Component {
   constructor() {

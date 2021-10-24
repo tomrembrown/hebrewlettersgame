@@ -23,14 +23,14 @@ cd hebrewalphabetgame
 3. Download and install packages in various directories, and copy files to create .env
 
 ```
-yarn install
+yarn initial
 ```
 
 4. Determine port postgres runs on
 
 ```
 linux:  sudo netstat -plunt |grep postgres
-or in psql terminal type \conninfo
+or in psql terminal type \conninfo (after psql -U postgres)
 ```
 
 5. Build PostgreSQL initial database, create user, and give user permissions

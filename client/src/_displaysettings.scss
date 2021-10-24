@@ -18,6 +18,19 @@ $color-secondary-2-2: #6049a2;
 $color-secondary-2-3: #351d79;
 $color-secondary-2-4: #220c5e;
 
+/* Colours to use */
+$color-branding: #6d288D;
+$color-button: #4a3091;
+$color-button-hover: #c04a88;
+
+/* greys */
+$color-fill-1: #F2F2F2;
+$color-fill-2: #b3a7ad;
+$color-fill-3: #7c6873;
+$color-fill-4: #4d3d45;
+$color-fill-5: #3d2b35;
+$color-text: #22151c;
+
 /* Fonts */
 $font-body-mobile: Verdana, Arial, serif;
 $font-body-desktop: sans-serif;
@@ -28,7 +41,7 @@ $font-hebrew-paleo: Arial;
 
 /* Colors - originally */
 // Main site header & nav
-$color-main-header-background: #3d3331;
+$color-main-header-background: $color-branding; // #3d3331;
 $color-main-header-title-text: #c59888;
 $color-main-header-title-shadow-1: #fff;
 $color-main-header-title-shadow-2: #2e2e2e;
@@ -37,25 +50,25 @@ $color-main-header-title-shadow-4: #2a2a2a;
 $color-main-header-title-shadow-5: #282828;
 $color-main-header-title-shadow-6: #262626;
 $color-main-header-title-shadow-7: #242424;
-$color-main-nav-button-background: #5f3222;
-$color-main-nav-button-text: #eee;
-$color-main-nav-button-border-top-and-left: #815444;
-$color-main-nav-button-border-right-and-bottom: #3d1000;
-$color-main-nav-button-active-background: #a37666;
-$color-main-nav-button-active-text: #000;
+$color-main-nav-button-background: $color-button; //#5f3222;
+$color-main-nav-button-text: $color-fill-1; // #eee;
+$color-main-nav-button-border-top-and-left: #9f68b9; // #815444;
+$color-main-nav-button-border-right-and-bottom: #351d79; // #3d1000;
+$color-main-nav-button-active-background: $color-button-hover; // #a37666;
+$color-main-nav-button-active-text: $color-text; // #000;
 $color-main-nav-button-active-border-top-and-left: #815444;
 $color-main-nav-button-active-border-right-and-bottom: #c59888;
 
 // Main site background (the background that doesn't change when different pages loaded)
-$color-main-body-background: white;
+$color-main-body-background: $color-fill-1; // white;
 
 // Main site footer
-$color-main-footer-background: #343a40;
-$color-main-footer-text: #686868;
-$color-main-footer-anchor: #dbe7f0;
+$color-main-footer-background: $color-branding; // #343a40;
+$color-main-footer-text: $color-fill-3; // #686868;
+$color-main-footer-anchor: $color-fill-1; // #dbe7f0;
 
 // Game Tab Colors
-$color-game-board-background: #f4f5e2;
+$color-game-board-background: #f1d7e4; // #f4f5e2;
 $color-game-board-border: #3d3331;
 $color-game-question-character: maroon;
 $color-game-question-character-border: #3d3331;
