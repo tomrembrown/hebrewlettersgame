@@ -1,5 +1,5 @@
 import React from 'react'
-import aleph from './aleph.png'
+import aleph from './aleph.svg'
 
 const Logo = () => {
   return (

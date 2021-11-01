@@ -1,7 +1,12 @@
 {
-  "name": "Hebrew Game",
-  "short_name": "Hebrew Alphabet Game",
+  "name": "Hebrew Alphabet Game",
+  "short_name": "Hebrew Game",
   "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
@@ -13,7 +18,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "start_url": ".",
+  "theme_color": "#a16e39",
+  "background_color": "#23201b",
   "display": "standalone"
 }
